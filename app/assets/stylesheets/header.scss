@@ -1,0 +1,40 @@
+.header h1{
+  font-size: 20px;
+}
+
+.header_unlogged  ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.header_unlogged ul li{
+  margin-left: 29px;
+  border-bottom: 1px solid #D3D3D3;
+  font-size: 11px;
+}
+
+.header_unlogged ul li:hover{
+  border-bottom: 1px solid black;
+}
+
+.header_unlogged{
+  padding: 30px;
+}
+
+.header {
+  padding: 30px
+}
+
+.fas {
+  font-size: 20px;
+}
+
+.icon1 {
+  color: #E55755;
+}
+
+.header_logged {
+  padding: 25px;
+}
+

@@ -1,3 +1,48 @@
 // Place all the styles related to the api/session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form {
+  display: block;
+  justify-content: center;
+  align-content: center;
+  // padding: 0 50px 0 50px;
+  margin: 0 auto;
+  width: 340px;
+  border: 1px solid #E55755;
+}
+
+.formInside{
+  padding: 40px 0 50px 0;
+  margin-left: 20px;
+
+}
+
+.formInside h3{
+  text-align: center;
+}
+.formInside form{
+  margin: 0 auto;
+}
+.form button{
+  width: 302px;
+  padding: 29px 0 29px 0;
+}
+
+#name-input1{
+  width: 144px;
+}
+
+#name-input2{
+  width: 144px;
+  margin-left: 9px
+}
+
+.form input{
+  width: 300px;
+  height: 66px;
+  border: 1px solid black;
+}
+
+.formInside input { 
+    text-align: center; 
+}
