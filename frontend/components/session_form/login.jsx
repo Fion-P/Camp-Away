@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMountain } from "@fortawesome/free-solid-svg-icons";
+
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -39,8 +43,14 @@ class SessionForm extends React.Component {
     return (
       <div className="form">
         <div className="formInside">
-          <h3>Login!</h3>
-          {this.renderErrors()}
+          <h3>Welcome back!</h3>
+          <h4>It's about time for another camping trip</h4>
+          <div className="mountainLogo">
+            <img src="/mountain-transparent.png"/>
+          </div>
+          <div className="errors">
+            {this.renderErrors()}
+          </div>
           <form>
               <input
                 type="text"
@@ -60,7 +70,6 @@ class SessionForm extends React.Component {
             <br />
             <button onClick={this.handleSubmit}>Login!</button>
           </form>
-          <br />
         </div>
       </div>
     )

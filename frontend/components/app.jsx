@@ -4,25 +4,38 @@ import {Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 import GreetingContainer from "./greeting/greeting_container";
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
+import HomeContainer from './hompage/homepage_container';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCampground } from "@fortawesome/free-solid-svg-icons";
+import { faTree } from "@fortawesome/free-solid-svg-icons";
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div className="app">
-    <header>
-      <span className='header'>
-        <Link to="/"><h1>Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</h1></Link>
-      </span>
-      <GreetingContainer />
-    </header>
-    <br/>
-    <br/>
-    <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    </Switch>
+    <div className="top">
+      <header className=".nav-bar">
+        <span className='header'>
+          <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link>
+
+          </h1>
+        </span>
+        <span>
+          <GreetingContainer />
+        </span>
+      </header>
+    </div>
+    <div className="body">
+      <Switch>
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <Route path="/" component={HomeContainer} />
+      </Switch>
+      {/* <img src="/mountain-transparent2.png" /> */}
+    </div>
+    <div className="footer">
+      <img src="/mountain-transparent2.png" />
+    </div>
   </div>
 );
 
