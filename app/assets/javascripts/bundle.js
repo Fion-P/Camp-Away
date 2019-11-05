@@ -194,7 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
     delete window.currentUser;
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  }
+  } // window.getState = store.getState;
+
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
@@ -238,7 +239,7 @@ var App = function App() {
     className: "app"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "top"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: ".nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "header"
@@ -425,6 +426,11 @@ function (_React$Component) {
   }
 
   _createClass(HomePage, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -447,7 +453,7 @@ function (_React$Component) {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faSearch"],
         className: "icon4"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        "class": "search-text",
+        className: "search-text",
         type: "search",
         placeholder: "Find camping near..."
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -581,6 +587,11 @@ function (_React$Component) {
   }
 
   _createClass(SessionForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;
@@ -738,6 +749,11 @@ function (_React$Component) {
   }
 
   _createClass(SessionForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;

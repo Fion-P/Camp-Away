@@ -1,20 +1,27 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  padding-top: 20px;
-  // border-style: outset;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 1px 2px 5px 2px rgba(0,0,0,.2);
+  z-index: 1;
+  opacity: .9;
 }
 
 .nav-bar {
-  box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
-  background-color: rgb(195, 194, 194);
+  position: sticky;
 }
 
+.top {
+  padding-bottom: 50px;
+}
 
 .body {
   margin-top: 50px;
@@ -24,9 +31,7 @@ header {
   // margin-bottom: -10px;
 }
 
-.top {
-  border-bottom: 3px solid rgb(182, 165, 146);
-}
+
 
 .footer {
   // margin-top: -10px;

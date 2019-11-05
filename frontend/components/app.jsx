@@ -14,7 +14,7 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div className="app">
     <div className="top">
-      <header className=".nav-bar">
+      <nav className=".nav-bar">
         <span className='header'>
           <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link>
 
@@ -23,7 +23,7 @@ const App = () => (
         <span>
           <GreetingContainer />
         </span>
-      </header>
+      </nav>
     </div>
     <div className="body">
       <Switch>
@@ -40,3 +40,4 @@ const App = () => (
 );
 
 export default App;
+

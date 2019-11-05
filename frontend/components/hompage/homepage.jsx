@@ -4,6 +4,9 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 
 class HomePage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
   render() {
     return (
@@ -22,7 +25,7 @@ class HomePage extends React.Component {
           <div className="search-area">
             <div className="search-bar">
               <FontAwesomeIcon icon={faSearch} className="icon4" />
-              <input class="search-text" type="search" placeholder="Find camping near..." />
+              <input className="search-text" type="search" placeholder="Find camping near..." />
             </div>
             <span className="search-button-cont">
               <button className="search-button" >Search</button>
