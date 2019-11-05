@@ -248,7 +248,9 @@ var App = function App() {
   }, "Camp", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_6__["FontAwesomeIcon"], {
     icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faCampground"],
     className: "icon1"
-  }), "way!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), "way!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "body"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
     exact: true,
@@ -583,6 +585,7 @@ function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -590,6 +593,16 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "handleDemoUser",
+    value: function handleDemoUser(event) {
+      event.preventDefault();
+      var demoUser = {
+        username: "DemoUser",
+        password: "password"
+      };
+      this.props.processForm(demoUser);
     }
   }, {
     key: "handleInput",
@@ -611,11 +624,14 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+      var errors = this.props.errors;
+      var errorMsg = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: "error-".concat(i)
         }, error);
       }));
+      errors = [];
+      return errorMsg;
     }
   }, {
     key: "render",
@@ -628,7 +644,10 @@ function (_React$Component) {
         className: "mountainLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/mountain-transparent.png"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDemoUser,
+        className: "demo"
+      }, "Demo Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
       }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",

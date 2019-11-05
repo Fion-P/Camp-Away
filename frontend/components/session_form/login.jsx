@@ -12,10 +12,20 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+  }
+
+  handleDemoUser(event) {
+    event.preventDefault();
+    const demoUser = {
+      username: "DemoUser",
+      password: "password"
+    };
+    this.props.processForm(demoUser);
   }
 
   handleInput(type) {
@@ -32,15 +42,18 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (
+    let errors = this.props.errors;
+    let errorMsg = (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
         ))}
       </ul>
     );
+    errors = [];
+    return errorMsg;
   }
 
   render() {
@@ -52,6 +65,8 @@ class SessionForm extends React.Component {
           <div className="mountainLogo">
             <img src="/mountain-transparent.png"/>
           </div>
+          <button onClick={this.handleDemoUser} className="demo">Demo Login</button>
+          <br/>
           <div className="errors">
             {this.renderErrors()}
           </div>

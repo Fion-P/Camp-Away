@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   handleInput(type) {

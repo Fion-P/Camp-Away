@@ -20,7 +20,7 @@ const App = () => (
 
           </h1>
         </span>
-        <span>
+        <span className="nav-right">
           <GreetingContainer />
         </span>
       </nav>
