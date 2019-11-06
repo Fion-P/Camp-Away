@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default ({ camp }) => {
-  // debugger
   return (
     <li className="campIndexItem">
       <div className="eachCamp">

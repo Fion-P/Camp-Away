@@ -18051,3 +18051,94 @@ Processing by Api::CampsController#index as JSON
 Completed 200 OK in 52ms (Views: 44.8ms | ActiveRecord: 5.1ms)
 
 
+Started GET "/" for ::1 at 2019-11-06 14:36:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 329ms (Views: 318.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-06 14:36:14 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (2.8ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (2.1ms)
+  Rendered api/camps/_camp.json.jbuilder (0.5ms)
+  Rendered api/camps/index.json.jbuilder (24.6ms)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-11-06 14:44:39 -0800
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fionpang/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (28.9ms)
+Started GET "/" for ::1 at 2019-11-06 14:44:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5549ms (Views: 5544.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3041ms (Views: 3037.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-06 14:45:00 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (2.8ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (1.2ms)
+  Rendered api/camps/_camp.json.jbuilder (0.5ms)
+  Rendered api/camps/index.json.jbuilder (143.8ms)
+Completed 200 OK in 173ms (Views: 137.7ms | ActiveRecord: 22.0ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-06 14:45:22 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+Completed 401 Unauthorized in 17ms (Views: 0.4ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/api/users" for ::1 at 2019-11-06 14:45:24 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 290ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-06 14:45:32 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-06 14:45:34 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"gg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2019-11-06 14:45:35 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"gg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+

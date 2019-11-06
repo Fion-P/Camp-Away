@@ -6,7 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
 Camp.destroy_all
+
+# ============================ Users ========================================
+demo_user = User.create!({
+    first_name: "Guest", 
+    last_name: "Demo", 
+    email: "DemoUser@gmail.com",
+    username: "Demo User",
+    password: "password"
+})
+
+# ============================== Campgrounds ===================================
 
 Camp.create!(camp_name: "Rustic Cabin",
   host_id: 2,

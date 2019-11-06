@@ -12,7 +12,6 @@ import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
 
 const App = () => {
-  // debugger
   return (
     <div className="app">
       <div className="top">
