@@ -28,10 +28,11 @@ const App = () => {
         </nav>
       </div>
       <div className="body">
-        
+        <Switch>
           <Route exact path="/camps" component={CampIndexContainer} />
-          <Route exact path="/" component={HomeContainer} />
+          <Route path="/" component={HomeContainer} />
           {/* <Redirect to="/" /> */}
+        </Switch>
         
         {/* <img src="/mountain-transparent2.png" /> */}
       </div>
