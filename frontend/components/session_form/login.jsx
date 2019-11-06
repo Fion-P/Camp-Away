@@ -28,7 +28,11 @@ class SessionForm extends React.Component {
       username: "DemoUser",
       password: "password"
     };
-    this.props.processForm(demoUser).then(this.props.closeModal);
+    this.setState({ username: "DemoUser"});
+    this.setState({ password: "password" })
+
+    setTimeout(this.props.processForm(demoUser).then(this.props.closeModal), 8000);
+    
   }
 
   handleInput(type) {

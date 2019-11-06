@@ -1,0 +1,88 @@
+.indexPage {
+  padding: 50px 50px 50px 80px;
+  // margin: 50px;
+}
+
+.campIndexItem {
+  // border: 2px solid #757575;
+  padding-left: 20px;
+  width: 40%;
+}
+
+.eachCamp {
+  border: 1px solid rgb(182, 165, 146);;
+  height: 309px;
+  // width: 30%;
+  padding: 10px;
+}
+
+
+.campsIndex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-left: 40px;
+  width: 1000px;
+  padding-top: 10px;
+}
+
+.eachCamp:hover {
+  border-color: #3AC49A;
+}
+
+.campIndexItem h3 {
+  font-size: 16px;
+  margin: 5px;
+  font-weight: 3000;
+}
+
+.campIndexItem h5 {
+  font-size: 16px;
+  margin: 5px;
+  font-weight: 3000;
+}
+
+.campIndexItem h3:hover {
+  color: rgb(182, 165, 146);
+  text-decoration: underline rgb(182, 165, 146);;
+  cursor: pointer;
+}
+
+.campIndexItem h4{
+  font-size: 12px;
+  margin: 5px;
+  color: #757575;
+  font-weight: normal;
+}
+
+
+.camps h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.camps h2 {
+  font-size: 15px;
+  color: #757575;
+  padding-bottom: 20px;
+}
+
+.campIndexItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.campNameLocation {
+  // display: flex;
+  padding: 5px 5px 5px 0;
+}
+
+.campDescription {
+  padding: 5px 5px 5px 0;
+}
+
+.campPrice {
+  display: flex;
+  justify-content: flex-end;
+}

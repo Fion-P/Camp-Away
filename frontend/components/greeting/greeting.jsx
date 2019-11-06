@@ -11,19 +11,19 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
     <div className="header_logged">
       <ul>
         <li>
-          <h2 className="header-name">Hi, {currentUser.username}!</h2>
+          <h3 className="header-name">Hi, {currentUser.username}!</h3>
         </li>
         <li>
-          <a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
+          <h3><a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
+          <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
         </li>
         <li>
-          <Link className="btn" to="/camps"> Camps </Link>
+          <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
         </li>
         <li>
-          <button onClick={logout}>logout</button>
+          <h3 className="formBtn" onClick={logout}>logout</h3>
         </li>
       </ul>
     </div>
@@ -37,7 +37,7 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
             <a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
           </li>
           <li>
-            <Link className="btn" to="/camps"> Camps </Link>
+            <h1 className="formBtn"><Link className="btn" to="/camps"> Camps </Link></h1>
           </li>
           <li>
             <h1 className="formBtn" onClick={() => openModal('signup')}>Signup</h1>
@@ -52,7 +52,7 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
 
   return (
     <header className="greeting">
-      <div>
+      <div className="greeting">
         {display}
       </div>
     </header>

@@ -1,15 +1,13 @@
 
 .header {
-  padding: 10px;
   margin-left: 20px;
-  // display: flex;
 }
-
 
 
 .header h1 a:hover {
   color: rgb(182, 165, 146);
 }
+
 
 .header h1 a{
   font-weight: bold;
@@ -26,7 +24,7 @@
 
 .header_unlogged ul li{
   margin-left: 29px;
-  border-bottom: 1px solid #D3D3D3;
+  border-bottom: 1px solid rgb(212, 192, 170);
   font-size: 13px;
 }
 
@@ -36,8 +34,7 @@
 }
 
 .header_unlogged{
-  // padding: 10px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .fas {
@@ -46,23 +43,12 @@
 
 
 .header_logged {
-  // padding: 25px;
-  margin-right: 20px;
-}
-
-.btn{
-
+  margin-right: 40px;
 }
 
 .btn:hover {
   color:  rgb(182, 165, 146);
 }
-
-// .nav-bar {
-//   border-bottom: 5px solid rgb(105, 38, 105);
-//   height: 70px;
-//   background-color: green;
-// }
 
 .header_logged ul{
   display: flex;
@@ -72,7 +58,7 @@
 
 .header_logged ul li{
   margin-left: 29px;
-  border-bottom: 1px solid #D3D3D3;
+  border-bottom: 1px solid rgb(212, 192, 170);
   font-size: 11px;
 }
 
@@ -91,4 +77,14 @@
 .formBtn:hover {
   color:  rgb(182, 165, 146);
   cursor: pointer;
+}
+
+
+.formBtn a:hover{
+  color:  rgb(182, 165, 146);
+  cursor: pointer;
+}
+
+.formBtn {
+  font-weight: bold;
 }

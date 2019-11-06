@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_213101) do
+ActiveRecord::Schema.define(version: 2019_11_06_020158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "camps", force: :cascade do |t|
+    t.string "camp_name", null: false
+    t.integer "host_id", null: false
+    t.string "location", null: false
+    t.float "longitude", null: false
+    t.float "latitude", null: false
+    t.integer "max_guests", null: false
+    t.boolean "availability", null: false
+    t.text "description", null: false
+    t.integer "minimum_nights", null: false
+    t.float "price", null: false
+    t.string "checkin_time", null: false
+    t.string "checkout_time", null: false
+    t.integer "elevation", null: false
+    t.string "terrain", null: false
+    t.string "weather", null: false
+    t.text "activities", default: [], array: true
+    t.boolean "portable_water", default: false, null: false
+    t.boolean "picnic_tables", default: false, null: false
+    t.boolean "bins", default: false, null: false
+    t.boolean "kitchen", default: false, null: false
+    t.boolean "showers", default: false, null: false
+    t.boolean "wifi", default: false, null: false
+    t.boolean "toilet", default: false, null: false
+    t.boolean "campfires", default: false, null: false
+    t.boolean "pets", default: false, null: false
+    t.string "lodging_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camp_name"], name: "index_camps_on_camp_name", unique: true
+    t.index ["host_id"], name: "index_camps_on_host_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
