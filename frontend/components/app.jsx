@@ -10,10 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCampground } from "@fortawesome/free-solid-svg-icons";
 import { faTree } from "@fortawesome/free-solid-svg-icons";
 import { AuthRoute } from '../util/route_util';
+import Modal from './modal/modal';
 
 const App = () => (
   <div className="app">
     <div className="top">
+      <Modal />
       <nav className=".nav-bar">
         <span className='header'>
           <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link>
@@ -27,9 +29,8 @@ const App = () => (
     </div>
     <div className="body">
       <Switch>
-        <AuthRoute exact path="/login" component={LogInFormContainer} />
-        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route path="/" component={HomeContainer} />
+        {/* <Redirect to="/" /> */}
       </Switch>
       {/* <img src="/mountain-transparent2.png" /> */}
     </div>

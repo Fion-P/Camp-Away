@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountain } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,13 +11,19 @@ class SessionForm extends React.Component {
       password: "",
       email: "",
       first_name: "",
-      last_name: ""
+      last_name: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.errors = [];
   }
 
-  componentDidMount() {
+  componentDidMount(prevProps) {
     window.scrollTo(0, 0);
+    this.props.clearErrors();
+  }
+  
+  componentDidUpdate(prevProps) {
+    
   }
 
   handleInput(type) {
@@ -29,7 +36,7 @@ class SessionForm extends React.Component {
     // debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -51,13 +58,14 @@ class SessionForm extends React.Component {
     return (
       <div className="form">
         <div className="formInside">
+          <div onClick={this.props.closeModal} className="close-x">X</div>
           <h3>Sign Up!</h3>
           <h4>Search, discover and book</h4>
           <h4>Everywhere you want to camp.</h4>
           <div className="mountainLogo">
             <img src="/mountain-transparent.png" />
           </div>
-
+          <br />
           {this.renderErrors()}
           <form>
               <input
@@ -66,13 +74,16 @@ class SessionForm extends React.Component {
                 id="name-input1"
                 onChange={this.handleInput('first_name')}
                 placeholder="First name"
+                required
               />
               <input
                 type="text"
+                required
                 value={this.state.last_name}
                 id="name-input2"
                 onChange={this.handleInput('last_name')}
                 placeholder="Last name"
+                
               />
             <br />
             <br />
@@ -81,6 +92,7 @@ class SessionForm extends React.Component {
                 value={this.state.email}
                 onChange={this.handleInput('email')}
                 placeholder = "Email"
+                required
               />
             <br />
             <br />
@@ -89,6 +101,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.handleInput('username')}
                 placeholder="Username"
+                required
               />
             <br />
             <br />
@@ -101,6 +114,7 @@ class SessionForm extends React.Component {
             <br />
             <br />
             <button onClick={this.handleSubmit}>Sign Up!</button>
+            <h5 className="sessionLink">Already have an account? <Link to="/" onClick={this.props.otherForm}>Login</Link> here!</h5>
           </form>
           <br />
         </div>

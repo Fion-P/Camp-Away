@@ -5,10 +5,14 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 
-const Greeting = ( { currentUser, logout } ) => {
+const Greeting = ( { currentUser, logout, openModal } ) => {
+  
   const display = currentUser ? (
     <div className="header_logged">
       <ul>
+        <li>
+          <h2 className="header-name">Hi, {currentUser.username}!</h2>
+        </li>
         <li>
           <a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
         </li>
@@ -36,11 +40,11 @@ const Greeting = ( { currentUser, logout } ) => {
             <Link className="btn" to="/camps"> Camps </Link>
           </li>
           <li>
-            <Link className="btn" to="/signup"> Sign Up </Link>
+            <button onClick={() => openModal('signup')}>Signup</button>
           </li>
           <br />
           <li>
-            <Link className="btn" to="/login"> Log In </Link>
+            <button onClick={() => openModal('login')}>Login</button>
           </li>
         </ul>
       </div>
