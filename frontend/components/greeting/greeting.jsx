@@ -40,11 +40,11 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
             <Link className="btn" to="/camps"> Camps </Link>
           </li>
           <li>
-            <button onClick={() => openModal('signup')}>Signup</button>
+            <h1 className="formBtn" onClick={() => openModal('signup')}>Signup</h1>
           </li>
           <br />
           <li>
-            <button onClick={() => openModal('login')}>Login</button>
+            <h1 className="formBtn" onClick={() => openModal('login')}>Login</h1>
           </li>
         </ul>
       </div>

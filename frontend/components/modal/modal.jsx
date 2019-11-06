@@ -21,9 +21,13 @@ function Modal({ modal, closeModal }) {
   }
   return (
     <div className="modal-background" onClick={closeModal}>
+      <br/>
+      <br/>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
       </div>
+      <br/>
+      <br/>
     </div>
   );
 }

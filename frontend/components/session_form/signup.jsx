@@ -65,9 +65,9 @@ class SessionForm extends React.Component {
           <div className="mountainLogo">
             <img src="/mountain-transparent.png" />
           </div>
-          <br />
           {this.renderErrors()}
           <form>
+            <div className="inputbox">
               <input
                 type="text"
                 value={this.state.first_name}
@@ -85,8 +85,9 @@ class SessionForm extends React.Component {
                 placeholder="Last name"
                 
               />
-            <br />
-            <br />
+            </div>
+
+            <div className="inputbox">
               <input
                 type="text"
                 value={this.state.email}
@@ -94,8 +95,8 @@ class SessionForm extends React.Component {
                 placeholder = "Email"
                 required
               />
-            <br />
-            <br />
+            </div>
+            <div className="inputbox">
               <input
                 type="text"
                 value={this.state.username}
@@ -103,20 +104,18 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 required
               />
-            <br />
-            <br />
+            </div>
+            <div className="inputbox">
               <input
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
                 placeholder="Password (min 6 characters)"
               />
-            <br />
-            <br />
+            </div>
             <button onClick={this.handleSubmit}>Sign Up!</button>
             <h5 className="sessionLink">Already have an account? <Link to="/" onClick={this.props.otherForm}>Login</Link> here!</h5>
           </form>
-          <br />
         </div>
       </div>
     )

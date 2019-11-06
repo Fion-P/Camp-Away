@@ -14,8 +14,7 @@
 }
 
 .formInside{
-  padding: 30px 20px 30px 20px;
-  // margin-left: 20px;
+  padding: 20px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,48 +25,50 @@
 .formInside h3{
   text-align: center;
   font-family: 'Staatliches', cursive;
-  font-size: 30px;
-  margin: 10px 0 5px 0;
+  font-size: 25px;
+  margin: 5px 0 5px 0;
 }
 
 .formInside form{
   margin: 0 auto;
 }
 .form button{
-  width: 302px;
-  padding: 29px 0 29px 0;
+  width: 300px;
+  padding: 15px 0 15px 0;
 }
 
 #name-input1{
-  width: 144px;
+  width: 146px;
 }
 
 #name-input2{
-  width: 144px;
-  margin-left: 9px
+  width: 146px;
+  margin-left: 5px
 }
 
 .form input{
   width: 301px;
-  height: 66px;
+  height: 45px;
   border: 1.5px solid rgb(182, 165, 146);
+  border-radius: 1px;
 }
 
 .formInside input { 
-    text-align: center; 
+  text-align: center; 
+  font-size: 12px;
 }
 
 .mountainLogo {
   display: flex;
   justify-content: center;
-  padding: 5px 0 10px 0;
+  padding: 5px 0 5px 0;
 }
 
 .formInside h4{
   text-align: center;
   font-family: 'Staatliches', cursive;
-  font-size: 18px;
-  margin: 5px 0 5px 0;
+  font-size: 15px;
+  margin: 2px 0 2px 0;
   color: #777777;
 }
 
@@ -77,9 +78,9 @@
 
 .mountainLogo img {
   // background-image: url('mountain-cartoon-png-transparent.png');
-  height: 120px;
-  width: 175px;
-  padding: 10px;
+  height: 100px;
+  width: 155px;
+  padding: 5px;
   -webkit-filter: grayscale(40%);
 }
 
@@ -108,6 +109,7 @@
 .sessionLink a{
   text-decoration: underline #757575;
   color: #757575;
+  font-size: 10px;
 }
 
 .sessionLink a:hover {
@@ -118,8 +120,17 @@
 .sessionLink {
   text-align: center;
   color: #757575;
+  font-size: 10px;
 }
 
 .close-x {
   cursor: pointer;
+}
+
+.inputbox {
+  padding-bottom: 5px;
+}
+
+.demoDiv {
+  padding-bottom: 5px;
 }

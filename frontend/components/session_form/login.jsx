@@ -38,7 +38,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
@@ -59,7 +58,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="form">
         <div className="formInside">
@@ -72,26 +70,26 @@ class SessionForm extends React.Component {
           <div className="errors">
             {this.renderErrors()}
           </div>
-          <br />
-          <button onClick={this.handleDemoUser} className="demo">Demo Login</button>
-          <br/>
+          <div className="demoDiv">
+            <button onClick={this.handleDemoUser} className="demo">Demo Login</button>
+          </div>
           <form>
+            <div className="inputbox">
               <input
                 type="text"
                 value={this.state.username}
                 onChange={this.handleInput('username')}
                 placeholder="Username"
               />
-            <br />
-            <br />
+            </div>
+            <div className="inputbox">
               <input
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
                 placeholder="Password"
               />
-            <br />
-            <br />
+            </div>
             <button onClick={this.handleSubmit}>Login!</button>
             <h5 className="sessionLink">Don't have an account? <Link to="/" onClick={this.props.otherForm}>Sign up</Link> here!</h5>
           </form>

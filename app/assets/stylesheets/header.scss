@@ -27,7 +27,7 @@
 .header_unlogged ul li{
   margin-left: 29px;
   border-bottom: 1px solid #D3D3D3;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .header_unlogged ul li:hover{
@@ -86,4 +86,9 @@
 
 .nav-right {
   padding-right: 10px;
+}
+
+.formBtn:hover {
+  color:  rgb(182, 165, 146);
+  cursor: pointer;
 }
