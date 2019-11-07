@@ -10,11 +10,12 @@ User.destroy_all
 Camp.destroy_all
 
 # ============================ Users ========================================
+
 demo_user = User.create!({
     first_name: "Guest", 
     last_name: "Demo", 
     email: "DemoUser@gmail.com",
-    username: "Demo User",
+    username: "DemoUser",
     password: "password"
 })
 
