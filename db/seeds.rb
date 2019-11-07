@@ -19,6 +19,23 @@ demo_user = User.create!({
     password: "password"
 })
 
+User.create!({
+    first_name: "Fion", 
+    last_name: "Pang", 
+    email: "fion@gmail.com",
+    username: "Fion",
+    password: "password"
+})
+
+User.create!({
+    first_name: "Danna", 
+    last_name: "Xu", 
+    email: "danna@gmail.com",
+    username: "Danna",
+    password: "password"
+})
+
+
 # ============================== Campgrounds ===================================
 
 Camp.create!(camp_name: "Rustic Cabin",
