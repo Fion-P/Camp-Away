@@ -689,9 +689,7 @@ function (_React$Component) {
         className: "page-top"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "front-page-intro"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find yourself outside."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Book unique camping experiences on over 300,000"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "campsites, cabins, RV parks, public parks and more."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find yourself outside."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Book unique camping experiences on over 300,000"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "campsites, cabins, RV parks, public parks and more.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/image.jpg"

@@ -25,11 +25,9 @@ class HomePage extends React.Component {
       <div className="home-page">
         <div className="page-top">
           <div className="top-left">
-            <div className="front-page-intro">
               <h1>Find yourself outside.</h1>
               <h2>Book unique camping experiences on over 300,000</h2>
               <h2>campsites, cabins, RV parks, public parks and more.</h2>
-            </div>
           </div>
           <div className="top-right">
             <img src="/image.jpg" />
