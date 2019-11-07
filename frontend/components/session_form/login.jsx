@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountain } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
+import { log } from 'util';
 
 
 
@@ -22,17 +23,39 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  handleDemoUser(event) {
-    event.preventDefault();
-    const demoUser = {
-      username: "DemoUser",
-      password: "password"
-    };
-    this.setState({ username: "DemoUser"});
-    this.setState({ password: "password" })
-
-    setTimeout(this.props.processForm(demoUser).then(this.props.closeModal), 8000);
+  handleDemoUser() {
+    this.inputUsername("DemoUser");
+    setTimeout(() => {
+      this.inputPassword("password");
+    }, 1200);
     
+  }
+
+  inputUsername(username) {
+    if (username.length <= 0) return;
+    setTimeout( () => {
+      let userArr = username.split("");
+      let current = this.state.username;
+      current += userArr.shift();
+      this.setState({username: current});
+      let newName = userArr.join('');
+      this.inputUsername(newName);
+    }, 120);
+  }
+
+  inputPassword(password) {
+    if (password.length <= 0) {
+      const user = Object.assign({}, this.state);
+      return this.props.processForm(user).then(this.props.closeModal);
+    }
+    setTimeout(() => {
+      let passArr = password.split("");
+      let current = this.state.password;
+      current += passArr.shift();
+      this.setState({ password: current });
+      let newPass = passArr.join('');
+      this.inputPassword(newPass);
+    }, 120);
   }
 
   handleInput(type) {
