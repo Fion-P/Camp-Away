@@ -1,29 +1,57 @@
-.indexPage {
-  padding: 20px 50px 50px 80px;
-  // margin: 50px;
-}
-
-.campIndexItem {
-  // border: 2px solid #757575;
-  padding-left: 20px;
-  width: 40%;
+.campsIndex {
+  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  // max-width: 800px;
+  width: 100%;
+  animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 .eachCamp {
-  border: 1px solid rgb(182, 165, 146);;
-  height: 309px;
-  // width: 30%;
-  padding: 10px;
+  padding: 1.5%;
+  width: 40%;
+  overflow: hidden;
 }
 
+.mapCamps {
+  padding-top: 1%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
-.campsIndex {
+.CIndex {
+  width: 60%;
+  padding-left: 5%;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  padding-left: 40px;
-  width: 1000px;
-  padding-top: 10px;
+}
+
+.CMaps {
+  width: 40%;
+  padding-top: 5%;
+  box-sizing: border-box;
+  max-height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.campIndexItem {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-height: 320px;
+  height: 309px;
+  box-sizing: border-box;
+  flex: 1 0 33%;
+  padding: 2%;
+  margin: 0;
 }
 
 .eachCamp:hover {
@@ -32,14 +60,15 @@
 
 .campIndexItem h3 {
   font-size: 16px;
-  margin: 5px;
+  margin: 1%;
   font-weight: 3000;
 }
 
 .campIndexItem h5 {
   font-size: 16px;
-  margin: 5px;
+  margin: 1%;
   font-weight: 3000;
+  width: 50%
 }
 
 .campIndexItem h3:hover {
@@ -50,7 +79,7 @@
 
 .campIndexItem h4{
   font-size: 12px;
-  margin: 5px;
+  margin: 2%;
   color: #757575;
   font-weight: normal;
 }
@@ -61,6 +90,10 @@
   font-weight: bold;
 }
 
+.homeWords {
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+}
 
 .camps h2 {
   font-size: 15px;
@@ -68,21 +101,25 @@
   padding-bottom: 20px;
 }
 
-.campIndexItem {
-  display: flex;
-  flex-direction: column;
-}
 
 .campNameLocation {
   // display: flex;
-  padding: 5px 5px 5px 0;
+  padding: 1% 1% 1% 0;
 }
 
 .campDescription {
-  padding: 5px 5px 5px 0;
+  padding: 1% 1% 1% 0;
 }
 
 .campPrice {
   display: flex;
   justify-content: flex-end;
 }
+
+ #map-container {
+   width: 80%;
+   height: 100%;
+    // z-index: 2;
+    // position: sticky;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ }

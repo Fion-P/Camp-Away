@@ -2,8 +2,8 @@ import React from 'react';
 
 export default ({ camp }) => {
   return (
-    <li className="campIndexItem">
-      <div className="eachCamp">
+    <div className="eachCamp">
+      <li className="campIndexItem">
         <div className="campNameLocation">
             <h3> {camp.camp_name} </h3>
             <h4> {camp.location} </h4>
@@ -15,7 +15,7 @@ export default ({ camp }) => {
           <h5> ${camp.price}/night </h5>
         </div>
         <br />
-      </div>
-    </li>
+      </li>
+    </div>
   );
 }

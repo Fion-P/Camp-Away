@@ -27,7 +27,7 @@ fion = User.create!({
     password: "password"
 })
 
-User.create!({
+danna = User.create!({
     first_name: "Danna", 
     last_name: "Xu", 
     email: "danna@gmail.com",
@@ -94,30 +94,30 @@ Camp.create!(camp_name: "The farm at Cunningham Marsh",
   lodging_type: "Tents"
 )
 
-# Camp.create!(camp_name: "Hidden Valley Campground",
-#   host_id: 2,
-#   location: "California",
-#   longitude: -116.161516,
-#   latitude: 34.017191,
-#   max_guests: 6,
-#   availability: true,
-#   description: "Hidden Valley Campground is a good option for those looking to sleep among starry skies near the center of the park on their next Joshua Tree camping adventure. Just off Park Boulevard, this Joshua Tree National Park camping location offers nine campsites with picnic tables, fire rings, and pit toilets.",
-#   minimum_nights: 1,
-#   price: 50,
-#   checkin_time: "After 2PM",
-#   checkout_time: "Before 11AM",
-#   elevation: 132,
-#   terrain: "Coastal",
-#   weather: "46",
-#   activities: ["Biking", "Boating", "Hiking", "Surfing", "Swimming", "Wildlife Watching"],
-#   portable_water: true, 
-#   picnic_tables: true, 
-#   kitchen: false,
-#   bins: true,
-#   showers: true,
-#   wifi: false,
-#   toilet: true,
-#   campfires: true,
-#   pets: false,
-#   lodging_type: "Tents"
-# )
+Camp.create!(camp_name: "Hidden Valley Campground",
+  host_id: danna.id,
+  location: "California",
+  longitude: -116.161516,
+  latitude: 34.017191,
+  max_guests: 6,
+  availability: true,
+  description: "Hidden Valley Campground is a good option for those looking to sleep among starry skies near the center of the park on their next Joshua Tree camping adventure. Just off Park Boulevard, this Joshua Tree National Park camping location offers nine campsites with picnic tables, fire rings, and pit toilets.",
+  minimum_nights: 1,
+  price: 50,
+  checkin_time: "After 2PM",
+  checkout_time: "Before 11AM",
+  elevation: 4233,
+  terrain: "Desert",
+  weather: "67",
+  activities: ["Biking", "Hiking", "Horseback riding", "OHV", "Climbing", "Wildlife Watching"],
+  portable_water: false, 
+  picnic_tables: true, 
+  kitchen: false,
+  bins: false,
+  showers: true,
+  wifi: false,
+  toilet: true,
+  campfires: true,
+  pets: true,
+  lodging_type: "Tents"
+)

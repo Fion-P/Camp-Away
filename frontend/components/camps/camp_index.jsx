@@ -11,8 +11,10 @@ class CampIndex extends React.Component {
     return (
       <div className="indexPage">
         <div className="camps">
-          <h1>The best camping near you! </h1>
-          <h2>Pitch a tent in the big city or rough it in the challenging backcountry!</h2>
+          <div className="homeWords">
+            <h1>The best camping near you! </h1>
+            <h2>Pitch a tent in the big city or rough it in the challenging backcountry!</h2>
+          </div>
           <div className="campsIndex">
               {camps.map(camp => (
                 <CampIndexItem
