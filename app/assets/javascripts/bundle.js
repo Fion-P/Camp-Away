@@ -310,10 +310,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hompage_homepage_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hompage/homepage_container */ "./frontend/components/hompage/homepage_container.jsx");
 /* harmony import */ var _camps_camp_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./camps/camp_index_container */ "./frontend/components/camps/camp_index_container.js");
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _camp_show_camp_show_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./camp_show/camp_show_container */ "./frontend/components/camp_show/camp_show_container.js");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+
 
 
 
@@ -331,7 +333,7 @@ var App = function App() {
     className: "app"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "top"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: ".nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "header"
@@ -346,6 +348,10 @@ var App = function App() {
     path: "/camps",
     component: _search_search_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/camps/:campId",
+    component: _camp_show_camp_show_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     component: _hompage_homepage_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -356,6 +362,103 @@ var App = function App() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/camp_show/camp_show.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/camp_show/camp_show.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var CampShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CampShow, _React$Component);
+
+  function CampShow() {
+    _classCallCheck(this, CampShow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CampShow).apply(this, arguments));
+  }
+
+  _createClass(CampShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+      this.props.fetchCamp(this.props.match.params.campId);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var camp = this.props.camp;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, camp.name);
+    }
+  }]);
+
+  return CampShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CampShow);
+
+/***/ }),
+
+/***/ "./frontend/components/camp_show/camp_show_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/camp_show/camp_show_container.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_camp_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/camp_actions */ "./frontend/actions/camp_actions.js");
+/* harmony import */ var _camp_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./camp_show */ "./frontend/components/camp_show/camp_show.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    camp: state.camps[ownProps.match.params.campId]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchCamp: function fetchCamp(campId) {
+      return dispatch(Object(_actions_camp_actions__WEBPACK_IMPORTED_MODULE_1__["fetchCamp"])(campId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_camp_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -483,11 +586,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var camp = _ref.camp;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "eachCamp"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/camps/".concat(camp.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "campIndexItem"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -496,7 +603,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "campDescription"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " ", camp.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "campPrice"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, " $", camp.price, "/night ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, " $", camp.price, "/night ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
 });
 
 /***/ }),

@@ -5,6 +5,7 @@ import GreetingContainer from "./greeting/greeting_container";
 import HomeContainer from './hompage/homepage_container';
 import CampIndexContainer from './camps/camp_index_container';
 import SearchContainer from './search/search_container';
+import CampShowContainer from './camp_show/camp_show_container';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCampground } from "@fortawesome/free-solid-svg-icons";
@@ -31,6 +32,7 @@ const App = () => {
       <div className="body">
         <Switch>
           <Route exact path="/camps" component={SearchContainer} />
+          <Route exact path="/camps/:campId" component={CampShowContainer} />
           <Route path="/" component={HomeContainer} />
           {/* <Redirect to="/" /> */}
         </Switch>
