@@ -19,7 +19,7 @@ demo_user = User.create!({
     password: "password"
 })
 
-User.create!({
+fion = User.create!({
     first_name: "Fion", 
     last_name: "Pang", 
     email: "fion@gmail.com",
@@ -39,7 +39,7 @@ User.create!({
 # ============================== Campgrounds ===================================
 
 Camp.create!(camp_name: "Rustic Cabin",
-  host_id: 8,
+  host_id: fion.id,
   location: "California",
   longitude: -120.752536,
   latitude: 35.56669,
@@ -67,7 +67,7 @@ Camp.create!(camp_name: "Rustic Cabin",
 )
 
 Camp.create!(camp_name: "The farm at Cunningham Marsh",
-  host_id: 8,
+  host_id: fion.id,
   location: "California",
   longitude: -122.802653,
   latitude: 38.367939,
