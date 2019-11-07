@@ -8,6 +8,13 @@
   color: rgb(182, 165, 146);
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: normal;
+}
 
 .header h1 a{
   font-weight: bold;
@@ -87,4 +94,31 @@
 
 .formBtn {
   font-weight: bold;
+}
+
+.top-left h1{
+  // animation: 
+  animation: slidein 2s ease-in 1s;
+}
+ 
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.front-page-intro {
+  // -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  // animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-name: fadeInDown;
+  animation-duration: 4s;
 }

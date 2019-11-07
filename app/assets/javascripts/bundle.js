@@ -635,6 +635,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! timers */ "./node_modules/timers-browserify/main.js");
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(timers__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -657,21 +659,26 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var HomePage =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(HomePage, _React$Component);
 
-  function HomePage() {
+  function HomePage(props) {
     _classCallCheck(this, HomePage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(HomePage).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(HomePage).call(this, props)); // this.divName = "hidden";
+    // this.state = {
+    //   shown: false
+    // };
   }
 
   _createClass(HomePage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0); // this.divName="show";
+      // setTimeout(this.setState({ shown: true }), 8000);
     }
   }, {
     key: "render",
@@ -682,7 +689,9 @@ function (_React$Component) {
         className: "page-top"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find yourself outside."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Book unique camping experiences on over 300,000"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "campsites, cabins, RV parks, public parks and more.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "front-page-intro"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find yourself outside."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Book unique camping experiences on over 300,000"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "campsites, cabins, RV parks, public parks and more."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/image.jpg"
