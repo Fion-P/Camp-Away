@@ -446,7 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    camp: state.camps[ownProps.match.params.campId]
+    camp: state.entities.camps[ownProps.match.params.campId]
   };
 };
 
@@ -1613,7 +1613,13 @@ var campsReducer = function campsReducer() {
 
   switch (action.type) {
     case _actions_camp_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CAMPS"]:
-      return action.camps;
+      var nextState = {};
+
+      for (var i = 0; i < action.camps.length; i++) {
+        nextState[action.camps[i].id] = action.camps[i];
+      }
+
+      return nextState;
 
     case _actions_camp_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CAMP"]:
       var newCamp = _defineProperty({}, action.camp.id, action.camp);
