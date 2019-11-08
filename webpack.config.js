@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   // lets us debug in js files we wrote instead of bundled webpack file
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   // sets up babel to transpile ES6/React code to ES5, browser-compatible code
   module: {
     rules: [

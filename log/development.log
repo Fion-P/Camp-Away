@@ -27745,3 +27745,191 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 77ms (Views: 73.1ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2019-11-07 16:53:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (3.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 461ms (Views: 450.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 16:53:07 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (1.7ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (4.0ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/index.json.jbuilder (21.7ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 16:57:26 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (1.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (3.4ms)
+  Rendered api/camps/_camp.json.jbuilder (0.7ms)
+  Rendered api/camps/_camp.json.jbuilder (0.9ms)
+  Rendered api/camps/index.json.jbuilder (22.5ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:57:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 159ms (Views: 153.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 16:57:29 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (1.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (1.9ms)
+  Rendered api/camps/_camp.json.jbuilder (0.5ms)
+  Rendered api/camps/_camp.json.jbuilder (0.3ms)
+  Rendered api/camps/index.json.jbuilder (13.1ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/camps/7" for ::1 at 2019-11-07 16:57:31 -0800
+Processing by Api::CampsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mCamp Load (1.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/camps_controller.rb:3
+  Rendering api/camps/show.json.jbuilder
+  Rendered api/camps/_camp.json.jbuilder (0.8ms)
+  Rendered api/camps/show.json.jbuilder (4.2ms)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:57:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:58:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 16:58:04 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (0.9ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (1.9ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/index.json.jbuilder (12.5ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/camps/7" for ::1 at 2019-11-07 16:58:07 -0800
+Processing by Api::CampsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mCamp Load (1.5ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/camps_controller.rb:3
+  Rendering api/camps/show.json.jbuilder
+  Rendered api/camps/_camp.json.jbuilder (1.6ms)
+  Rendered api/camps/show.json.jbuilder (4.5ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 17:36:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 178ms (Views: 168.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 17:36:28 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (3.4ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (3.6ms)
+  Rendered api/camps/_camp.json.jbuilder (0.8ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/index.json.jbuilder (29.7ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 17:44:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 124ms (Views: 117.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 17:44:23 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (1.8ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (1.2ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/_camp.json.jbuilder (0.5ms)
+  Rendered api/camps/index.json.jbuilder (17.5ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 17:44:31 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (1.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (1.8ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/_camp.json.jbuilder (0.4ms)
+  Rendered api/camps/index.json.jbuilder (18.3ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 17:50:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "41LeSrs3Iy030oB0vWVCmw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 121ms (Views: 115.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/camps" for ::1 at 2019-11-07 17:50:21 -0800
+Processing by Api::CampsController#index as JSON
+  Rendering api/camps/index.json.jbuilder
+  [1m[36mCamp Load (2.8ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/api/camps/index.json.jbuilder:1
+  Rendered api/camps/_camp.json.jbuilder (2.5ms)
+  Rendered api/camps/_camp.json.jbuilder (0.6ms)
+  Rendered api/camps/_camp.json.jbuilder (2.8ms)
+  Rendered api/camps/index.json.jbuilder (52.8ms)
+Completed 200 OK in 75ms (Views: 69.4ms | ActiveRecord: 2.8ms)
+
+
