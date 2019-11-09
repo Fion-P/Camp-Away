@@ -1,0 +1,19 @@
+
+
+.activity {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  padding: 2%;
+}
+
+.activity-icon {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.activity h1 {
+  font-size: 17px;
+  overflow: hidden;
+}
