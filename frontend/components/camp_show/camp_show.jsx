@@ -3,12 +3,17 @@ import CampArea from './camp_area';
 import CampEssentials from './camp_essentials';
 import {CampAmenities} from './camp_amenities';
 import {CampActivity} from  './camp_activity_item';
+import BookingFormContainer from '../bookings/booking_form_container';
 
 class CampShow extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0)
     this.props.fetchCamp(this.props.match.params.campId)
+      .then( 
+        res => {
+          this.props.fetchUser(res.camp.host_id);}
+      );
   }
 
   componentDidUpdate(prevProps) {
@@ -20,12 +25,14 @@ class CampShow extends React.Component {
   render () {
     let camp = this.props.camp;
     if (!camp) return null;
-    let activities = this.props.camp.activities
+    let activities = this.props.camp.activities;
+    let host = this.props.users[camp.host_id];
+    if (!host) return null;
     return (
       <div className="campShow">
-        <div className="campImage">
+        {/* <div className="campImage">
           <h2>Image area</h2>
-        </div>
+        </div> */}
         <div className="showArea">
           <div className="campinfo">
             <div className="campTitle">
@@ -39,9 +46,8 @@ class CampShow extends React.Component {
 
             <div className="camp-description">
               <div className="campHost">
-                {/* <h1>{hos.first_name}</h1>
-                <h1>{host.last_name}</h1> */}
-                {/* {camp.host.first_name} */}
+                <h1>Hosted by</h1>
+                <h2>{host.first_name} {host.last_name[0]}</h2>
               </div>
               <div className="description">
                 {camp.description}
@@ -63,8 +69,10 @@ class CampShow extends React.Component {
               </div>
             </div>
 
-            <div className="question">
-              Have a question? <span className="message">Send Host a message!</span>
+            <div className="question" >
+              <h1 onClick={() => this.props.openModal('message')}>
+                Have a question? <span className="message" >Send Host a message!</span>
+              </h1>
             </div>
 
             <div className="details-box">
@@ -92,9 +100,9 @@ class CampShow extends React.Component {
             <div className="activities">
               <h1>Activities</h1>
               <h2>Offered on the Host's property or nearby.</h2>
-              <div className="activities-box">
-                  {activities.map (activity => {
-                    return < CampActivity activity={activity.toLowerCase()} />
+              <div className="activities-box" >
+                  {activities.map ((activity, idx) => {
+                    return < CampActivity activity={activity.toLowerCase()} key={idx}/>
                   })}
               </div>
             </div>
@@ -104,7 +112,8 @@ class CampShow extends React.Component {
               <h2>A little sneak peek of this gorgeous land</h2>
               <div className="area">
                 <div className="area-box">
-                  <h2>terrain</h2>
+                  <h2>{camp.terrain}</h2>
+                  <h3>Listing's terrain</h3>
                 </div>
                 <div className="area-box">
                   <h2>{camp.elevation}ft</h2>
@@ -117,14 +126,14 @@ class CampShow extends React.Component {
               </div>
             </div>
 
-              <div className="reviews">
+              {/* <div className="reviews">
                 <h2>create reviews</h2>
-              </div>
+              </div> */}
             </div>
 
           <div className="bookingBox">
             <div className="bookingContent">
-              <h2>booking box</h2>
+              <BookingFormContainer camp={camp} />
             </div>
           </div>
         </div>

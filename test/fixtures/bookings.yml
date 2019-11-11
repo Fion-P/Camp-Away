@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: bookings
+#
+#  id         :integer          not null, primary key
+#  camp_id    :integer          not null
+#  user_id    :integer          not null
+#  num_guests :integer          not null
+#  check_in   :date             not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  check_out  :date             not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  camp_id: 1
+  user_id: 1
+  num_guests: 1
+  check_in: 2019-11-09
+  _check_out: 2019-11-09
+
+two:
+  camp_id: 1
+  user_id: 1
+  num_guests: 1
+  check_in: 2019-11-09
+  _check_out: 2019-11-09

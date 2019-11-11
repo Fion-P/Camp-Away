@@ -1,0 +1,99 @@
+.booking-form {
+  padding: 5%;
+}
+
+.booking-form > h1 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.booking-form > h2 {
+  color: rgb(204, 204, 204);
+  padding-bottom: 4%;
+}
+
+.booking-input {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.booking-input-items {
+  border-top: 1px solid #DFDDDD;
+  border-bottom: 1px solid #DFDDDD;
+}
+
+.check-in, .check-out{
+  border-right: 1px solid #DFDDDD;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+.DayPickerInput {
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.DayPickerInput:hover {
+  cursor: pointer;
+}
+
+.book-guests {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+.guest-input {
+  display: flex;
+  flex-direction: row; 
+  text-align: center;
+  width: 70%;
+}
+
+#step-btn {
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 20px;
+  width: 32%;
+  padding: 0;
+}
+
+#guests {
+  width: 32%;
+  text-align: center;
+}
+
+#step-btn:hover {
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.booking-input-label {
+  font-weight: 525;
+  font-size: 16px;
+}
+
+.booking-submit {
+  padding-top: 5%;
+}
+
+#booking-submit-btn {
+  width: 95%;
+  height: 38px;
+}

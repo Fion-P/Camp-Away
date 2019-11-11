@@ -3,14 +3,17 @@ import { connect } from 'react-redux';
 import { fetchCamp } from '../../actions/camp_actions';
 import { fetchUser } from '../../actions/session_actions';
 import CampShow from './camp_show';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   camp: state.entities.camps[ownProps.match.params.campId],
+  users: state.entities.users
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchCamp: (campId) => dispatch(fetchCamp(campId)),
-  fetchUser: (id) => dispatch(fetchUser(id))
+  fetchUser: (id) => dispatch(fetchUser(id)),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampShow);

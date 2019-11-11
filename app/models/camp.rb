@@ -48,4 +48,8 @@ class Camp < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User
 
+  has_many :bookings, 
+    foreign_key: :camp_id, 
+    class_name: :Booking
+
 end

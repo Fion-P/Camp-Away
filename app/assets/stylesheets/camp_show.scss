@@ -14,7 +14,6 @@
 }
 
 .bookingBox {
-  background-color: purple;
   width: 33.33333333%;
   display: box;
 }
@@ -48,9 +47,8 @@
 .bookingContent {
   position: sticky;
   width: 100%;
-  background-color: rgb(83, 143, 135);
-  color: white;
   margin-top: 100px;
+  box-shadow: 0 2px 2px rgb(219, 216, 216);
 }
 
 .showArea {
@@ -66,9 +64,14 @@
 
 .campHost {
   display: flex;
+  flex-direction: column;
   padding: 1.5%;
   padding-left: 7%;
   width: 20%;
+}
+
+.campHost > h1 {
+  font-weight: 550;
 }
 
 .description {

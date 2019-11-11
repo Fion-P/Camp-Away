@@ -24,6 +24,10 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Camp
 
+  has_many :bookings, 
+    foreign_key: :user_id, 
+    class_name: :Booking
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)
