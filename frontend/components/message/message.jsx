@@ -6,7 +6,8 @@ class Message extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      message: ""
+      message: "",
+      errors: ""
     };
     this.handleMessage = this.handleMessage.bind(this);
   }
@@ -17,7 +18,11 @@ class Message extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.closeModal();
+    if (this.props.currentUser) {
+      this.props.closeModal();
+    } else {
+      this.setState({ errors: 'Must be logged in to send message' })
+    }
   }
 
   render () {
@@ -37,6 +42,7 @@ class Message extends React.Component {
             <br/>
           <button onClick={this.handleSubmit}>Send!</button>
         </form>
+        <h2 id="message-errors">{this.state.errors}</h2>
       </div>
     )
   }
