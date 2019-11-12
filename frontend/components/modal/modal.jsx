@@ -4,8 +4,12 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import MessageContainer from '../message/message.container';
+import UpdateReviewContainer from '../reviews/update_review_container';
 
 function Modal({ modal, closeModal }) {
+  // let modal = this.props.modal;
+  // let closeModal = this.props.closeModal;
+  // debugger;
   if (!modal) {
     return null;
   }
@@ -19,6 +23,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'message':
       component = <MessageContainer />;
+      break;
+    case 'edit':
+      component = <UpdateReviewContainer />;
       break;
     default:
       return null;
@@ -38,7 +45,7 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal.modal
   };
 };
 

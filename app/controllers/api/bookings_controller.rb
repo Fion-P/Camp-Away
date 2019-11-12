@@ -28,7 +28,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def destroy 
-    @booking = current.bookings.find(params[:id])
+    @booking = current_user.bookings.find(params[:id])
 
     @booking.destroy
 

@@ -55,7 +55,9 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.currentUser) {
+    if (!this.state.check_in || !this.state.check_out) {
+      return;
+    } else if (this.props.currentUser) {
       const booking = Object.assign({}, this.state);
       this.props.createBooking(booking);
       this.props.history.push(`/camps`);

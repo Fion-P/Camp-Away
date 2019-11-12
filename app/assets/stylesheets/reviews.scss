@@ -1,0 +1,25 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-input textarea{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.review-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-left: 7%;
+}
+
+.review-input button {
+  height: 20px;
+}
+
+.review-form > h1 {
+  padding-top: 15px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}

@@ -16,6 +16,10 @@
 .bookingBox {
   width: 33.33333333%;
   display: box;
+  // position: -webkit-sticky;
+  // position: sticky;
+  top: 70px;
+  margin-top: -80px;
 }
 
 .campinfo {
@@ -196,6 +200,7 @@
 
 .area-container {
   padding: 5%;
+  border-bottom: 1px solid rgb(219, 216, 216);
 }
 
 .area {
@@ -242,7 +247,15 @@
 }
 
 .reviews {
-  height: 352px;
   padding: 5%;
-  background-color: rgb(226, 172, 181);
+}
+
+.review-index {
+  padding: 2% 5% 5% 5%;
+  border-bottom: 1px solid rgb(219, 216, 216);
+}
+
+.review-count {
+  font-weight: 600;
+  font-size: 16px;
 }

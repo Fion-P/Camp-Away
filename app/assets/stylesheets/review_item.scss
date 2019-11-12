@@ -1,0 +1,53 @@
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.review-author > span {
+  font-weight: 600;
+}
+
+.review-date {
+  color: #808080;
+  font-size: 12px;
+}
+
+.review-author {
+  font-size: 15px;
+}
+
+.review-item:first-child {
+  padding: 5px 0 15px 0;
+}
+
+.review-item {
+  border-bottom: 1px solid rgb(219, 216, 216);
+  padding: 15px 0 15px 0;
+}
+
+.thumbs-icon {
+  color: #3AC49A;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+}
+
+.review-body {
+  width: 350px;
+  overflow-wrap: break-word;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.review-buttons {
+  padding: 5px 5px 6px 0;
+}
+
+.review-buttons button{
+  height: 28px;
+  padding: 2px 4px 2px 4px;
+  margin-right: 3%;
+  width: 60px;
+}

@@ -4,15 +4,21 @@ import CampEssentials from './camp_essentials';
 import {CampAmenities} from './camp_amenities';
 import {CampActivity} from  './camp_activity_item';
 import BookingFormContainer from '../bookings/booking_form_container';
+import ReviewFormContainer from '../reviews/review_form_container';
+import ReviewItem from '../reviews/review_item_container';
 
 class CampShow extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     this.props.fetchCamp(this.props.match.params.campId)
       .then( 
         res => {
-          this.props.fetchUser(res.camp.host_id);}
+          this.props.fetchUser(res.camp.host_id);
+          // res.camp.reviewIds.map((id) => {
+          //   return this.props.fetchUser(this.props.reviews[id].user_id);
+          // });
+        }
       );
   }
 
@@ -28,6 +34,20 @@ class CampShow extends React.Component {
     let activities = this.props.camp.activities;
     let host = this.props.users[camp.host_id];
     if (!host) return null;
+    let reviews = this.props.reviews;
+    let reviewIds = this.props.camp.reviewIds;
+    if (!reviewIds) return null;
+    let reviewCount = reviewIds.length;
+    let reviewTitle;
+    if (reviewCount > 1 || reviewCount === 0) {
+      reviewTitle = (
+        <h1 className="review-count">{reviewCount} Written reviews</h1>
+      )
+    } else if (reviewCount === 1) {
+      reviewTitle = (
+        <h1 className="review-count">{reviewCount} Written review</h1>
+      )
+    }
     return (
       <div className="campShow">
         {/* <div className="campImage">
@@ -125,11 +145,25 @@ class CampShow extends React.Component {
                 </div>
               </div>
             </div>
-
-              {/* <div className="reviews">
-                <h2>create reviews</h2>
-              </div> */}
+            
+            <div className="reviews">
+              {reviewTitle}
+              <div className="review-index">
+                  {reviewIds.map((id) => {
+                    return <ReviewItem 
+                      review={reviews[id]} 
+                      key={id} 
+                      users={this.props.users}
+                      deleteReview= {this.props.deleteReview}
+                      fetchUser = {this.props.fetchUser}
+                    />
+                  })}
+              </div>
+              <div className="r-form">
+                <ReviewFormContainer camp={camp}/>
+              </div>
             </div>
+          </div>
 
           <div className="bookingBox">
             <div className="bookingContent">

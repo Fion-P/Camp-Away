@@ -55,5 +55,5 @@ export const logout = () => dispatch => (
 );
 
 export const clearErrors = () => dispatch => (
-  dispatch(receiveErrors([]))
+  dispatch(receiveErrors( [] ))
 );

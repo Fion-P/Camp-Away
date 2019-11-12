@@ -52,4 +52,8 @@ class Camp < ApplicationRecord
     foreign_key: :camp_id, 
     class_name: :Booking
 
+  has_many :reviews, 
+    foreign_key: :camp_id,
+    class_name: :Review
+
 end

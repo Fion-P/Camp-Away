@@ -37,6 +37,7 @@ class Message extends React.Component {
               cols="30"
               rows="10"
               placeholder="Message your host..."
+              required
             > 
             </textarea>
             <br/>

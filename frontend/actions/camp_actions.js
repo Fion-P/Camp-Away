@@ -8,9 +8,11 @@ export const receiveCamps = camps => ({
   camps,
 });
 
-export const receiveCamp = (camp) => ({
+export const receiveCamp = ({ camp, reviews, authors }) => ({
   type: RECEIVE_CAMP,
   camp,
+  reviews,
+  authors,
 });
 
 export const fetchCamps = () => dispatch => (
@@ -24,3 +26,5 @@ export const fetchCamp = id => dispatch => (
     dispatch(receiveCamp(camp))
   ))
 );
+
+

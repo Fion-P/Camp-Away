@@ -6,10 +6,10 @@
 #  camp_id    :integer          not null
 #  user_id    :integer          not null
 #  num_guests :integer          not null
-#  check_in   :date             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  check_out  :date             not null
+#  check_out  :string           not null
+#  check_in   :string           not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

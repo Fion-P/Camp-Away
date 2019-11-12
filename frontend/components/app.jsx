@@ -13,6 +13,7 @@ import { faTree } from "@fortawesome/free-solid-svg-icons";
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
 
+
 const App = () => {
   return (
     <div className="app">
