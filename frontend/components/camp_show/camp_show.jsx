@@ -15,9 +15,9 @@ class CampShow extends React.Component {
       .then( 
         res => {
           this.props.fetchUser(res.camp.host_id);
-          // res.camp.reviewIds.map((id) => {
-          //   return this.props.fetchUser(this.props.reviews[id].user_id);
-          // });
+          res.camp.reviewIds.map((id) => {
+            return this.props.fetchReview(id);
+          });
         }
       );
   }
@@ -26,6 +26,16 @@ class CampShow extends React.Component {
     if (prevProps.match.params.campId !== this.props.match.params.campId) {
       this.props.fetchCamp(this.props.match.params.campId);
     }
+    // debugger;
+    // if (prevProps.camp.reviewIds !== this.props.camp.reviewIds) {
+    //   this.props.camp.reviewIds.map((id) => {
+    //     return this.props.fetchReview(id);
+    //   });
+    // }
+    // this.props.fetchUser(this.props.camp.host_id);
+    // this.props.camp.reviewIds.map((id) => {
+    //   return this.props.fetchReview(id);
+    // });
   }
 
   render () {
@@ -48,6 +58,7 @@ class CampShow extends React.Component {
         <h1 className="review-count">{reviewCount} Written review</h1>
       )
     }
+    // debugger;
     return (
       <div className="campShow">
         {/* <div className="campImage">

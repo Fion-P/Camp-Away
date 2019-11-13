@@ -19,11 +19,12 @@ const campsReducer = (state = {}, action) => {
       newState[review.camp_id].reviewIds.push(review.id);
       return newState;
     case REMOVE_REVIEW:
-      // debugger;
-      const {id} = action;
+      const {id, camp_id} = action;
       let thisState = Object.assign({}, state)
-      let idx = thisState[Object.keys(state)].reviewIds.indexOf(id);
-      thisState[Object.keys(state)].reviewIds.splice(idx, 1);
+      let ids = thisState[camp_id].reviewIds;
+      if (!ids) return null;
+      let idx = thisState[camp_id].reviewIds.indexOf(id);
+      thisState[camp_id].reviewIds.splice(idx, 1);
       return thisState;
     default:
       return state;

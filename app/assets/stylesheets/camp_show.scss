@@ -17,7 +17,8 @@
   width: 33.33333333%;
   display: box;
   // position: -webkit-sticky;
-  // position: sticky;
+  position: sticky;
+  align-self: flex-start;
   top: 70px;
   margin-top: -80px;
 }
