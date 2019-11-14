@@ -6,6 +6,8 @@ import {CampActivity} from  './camp_activity_item';
 import BookingFormContainer from '../bookings/booking_form_container';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewItem from '../reviews/review_item_container';
+import Carousel from '../carousel/carousel';
+import { Link } from 'react-router-dom';
 
 class CampShow extends React.Component {
 
@@ -58,17 +60,20 @@ class CampShow extends React.Component {
         <h1 className="review-count">{reviewCount} Written review</h1>
       )
     }
+    if (!camp.photoUrls) return null;
     // debugger;
+
     return (
       <div className="campShow">
-        {/* <div className="campImage">
-          <h2>Image area</h2>
-        </div> */}
+        <div className="campImage">
+          <img src={camp.photoUrls[0]}/>
+          {/* <Carousel photoUrls={camp.photoUrls} /> */}
+        </div>
         <div className="showArea">
           <div className="campinfo">
             <div className="campTitle">
-              <div className="tags">
-                <span className="nametags">{camp.location}</span> > <span className="nametags">{camp.camp_name}</span> >
+              <div className="tags">   
+                <span className="nametags"><Link to={`/camps`}>{camp.location}</Link></span> > <span className="nametags">{camp.camp_name}</span> >
               </div>
               <h1>
                 {camp.camp_name}

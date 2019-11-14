@@ -9,7 +9,8 @@ class EditReview extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReview(this.props.reviewId);
+    // debugger;
+    this.props.fetchReview(this.props.review.id);
   }
 
   handleInput(type) {

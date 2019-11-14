@@ -9,9 +9,10 @@
 }
 
 .eachCamp {
-  padding: 1.5%;
-  width: 40%;
+  padding: 3px;
+  width: 280px;
   overflow: hidden;
+  margin: 5px;
 }
 
 
@@ -47,11 +48,11 @@
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  max-height: 320px;
-  height: 309px;
+  // max-height: 500px;
+  height: 295px;
   box-sizing: border-box;
   flex: 1 0 33%;
-  padding: 2%;
+  padding: 3px;
   margin: 0;
 }
 
@@ -109,7 +110,7 @@
 
 .campNameLocation {
   // display: flex;
-  padding: 1% 1% 1% 0;
+  padding: 5% 1% 1% 0;
 }
 
 .campDescription {
@@ -117,8 +118,15 @@
 }
 
 .campPrice {
+  padding-top: 3%;
   display: flex;
   justify-content: flex-end;
+}
+
+.campPrice h5{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.5%;
 }
 
  #map-container {
@@ -127,4 +135,9 @@
     // z-index: 2;
     // position: sticky;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ }
+
+ .index-photo img {
+   height: 190px;
+   width: 100%;
  }

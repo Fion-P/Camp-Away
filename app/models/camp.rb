@@ -56,4 +56,7 @@ class Camp < ApplicationRecord
     foreign_key: :camp_id,
     class_name: :Review
 
+  has_many_attached :photos
+  # has_one_attached :photo
+
 end

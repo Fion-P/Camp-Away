@@ -14,6 +14,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
+    # debugger
     @review = Review.find(params[:id])
   end
 

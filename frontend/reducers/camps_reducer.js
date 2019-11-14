@@ -16,7 +16,10 @@ const campsReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       const { review } = action;
       let newState = Object.assign({}, state);
-      newState[review.camp_id].reviewIds.push(review.id);
+      // debugger;
+      if (!newState[review.camp_id].reviewIds.includes(review.id)) {
+        newState[review.camp_id].reviewIds.push(review.id);
+      }
       return newState;
     case REMOVE_REVIEW:
       const {id, camp_id} = action;

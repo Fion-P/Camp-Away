@@ -7,10 +7,20 @@
 }
 
 .campImage {
-  width: 100%;
-  background-color: blue;
+  height: 650px;
+  // background-color: blue;
   color: white;
   // height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campImage img {
+  height: 600px;
+  width: 1050px;
+  display: flex;
+  justify-content: center;
 }
 
 .bookingBox {
@@ -52,12 +62,10 @@
 .bookingContent {
   position: sticky;
   width: 100%;
-  margin-top: 100px;
-  box-shadow: 0 2px 2px rgb(219, 216, 216);
-}
-
-.showArea {
-  display: flex;
+  margin-top: 8px;
+  box-shadow: 0 2px 2px #dbd8d8;
+  z-index: 1;
+  background-color: white;
 }
 
 .camp-description {
@@ -85,7 +93,8 @@
 }
 
 .showArea {
-  width: 80%;
+  display: flex;
+  width: 900px;
   margin: 0 auto;
 }
 
