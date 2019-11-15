@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 class ReviewItem extends React.Component {
 
@@ -38,12 +39,12 @@ class ReviewItem extends React.Component {
         <div></div>
       )
     
-    // if (!author) return null;
+
     return (
       <div className="review-item">
         <div className="review-head">
           <h1 className="review-author">
-            <FontAwesomeIcon icon={faThumbsUp} className="thumbs-icon" /> <span>{review.author_first} {review.author_last[0]}</span> recommends this listing
+            <FontAwesomeIcon icon={faThumbsUp} className="thumbs-icon" /> <span className="review-author-link"><Link to={`/users/${review.author_id}`}>{review.author_first} {review.author_last[0]}</Link></span> recommends this listing
           </h1>
           <h1 className ="review-date">
             {date}

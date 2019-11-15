@@ -87,6 +87,12 @@
   font-weight: 550;
 }
 
+.campHost > h2:hover {
+  // font-weight: 550;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .description {
   padding: 1.5%;
   width: 68%;

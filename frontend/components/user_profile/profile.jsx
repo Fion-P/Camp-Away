@@ -23,6 +23,12 @@ class Profile extends React.Component {
 
   }
 
+  componentDidUpdate(oldProps) {
+    if (oldProps.match.params.userId !== this.props.match.params.userId) {
+      this.props.fetchUser(this.props.match.params.userId);
+    }
+  }
+
   render() {
     const { user, fetchBooking, bookings, currentUserId} = this.props;
     if (!this.state.loaded) return null;
@@ -33,6 +39,7 @@ class Profile extends React.Component {
         <h2 className="no-books">Private</h2>
       </div>
     )
+    if (!user) return null;
     if ( currentUserId === user.id ) {
       if (user.bookingIds.length > 0) {
         books = (

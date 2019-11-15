@@ -9,6 +9,7 @@ import ReviewItem from '../reviews/review_item_container';
 import Carousel from '../carousel/carousel';
 import { Link } from 'react-router-dom';
 
+
 class CampShow extends React.Component {
 
   componentDidMount() {
@@ -28,16 +29,6 @@ class CampShow extends React.Component {
     if (prevProps.match.params.campId !== this.props.match.params.campId) {
       this.props.fetchCamp(this.props.match.params.campId);
     }
-    // debugger;
-    // if (prevProps.camp.reviewIds !== this.props.camp.reviewIds) {
-    //   this.props.camp.reviewIds.map((id) => {
-    //     return this.props.fetchReview(id);
-    //   });
-    // }
-    // this.props.fetchUser(this.props.camp.host_id);
-    // this.props.camp.reviewIds.map((id) => {
-    //   return this.props.fetchReview(id);
-    // });
   }
 
   render () {
@@ -83,7 +74,7 @@ class CampShow extends React.Component {
             <div className="camp-description">
               <div className="campHost">
                 <h1>Hosted by</h1>
-                <h2>{host.first_name} {host.last_name[0]}</h2>
+                <h2><Link to={`/users/${host.id}`}>{host.first_name} {host.last_name[0]}</Link></h2>
               </div>
               <div className="description">
                 {camp.description}
