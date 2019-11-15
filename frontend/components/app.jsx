@@ -35,7 +35,7 @@ const App = () => {
         <Switch>
           <Route exact path="/camps/:campId" component={CampShowContainer} />
           <Route exact path="/camps" component={SearchContainer} />
-          <Route exact path="/users/:userId" component={ProfileContainer} />
+          <AuthRoute exact path="/users/:userId" component={ProfileContainer} />
           <Route path="/" component={HomeContainer} />
           {/* <Redirect to="/" /> */}
         </Switch>

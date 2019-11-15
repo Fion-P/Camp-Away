@@ -16,7 +16,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUserId)
+    this.props.fetchUser(this.props.match.params.userId)
       .then(() => this.setState({
         loaded: true
       }));
@@ -24,26 +24,33 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { user, fetchBooking, bookings} = this.props;
+    const { user, fetchBooking, bookings, currentUserId} = this.props;
     if (!this.state.loaded) return null;
     console.log(user);
-    let books;
-    if (user.bookingIds.length > 0) {
-      books = (
-        <div className="bookings">
-          {
-            user.bookingIds.map(id => {
-              return <BookingItemContainer booking={bookings[id]} key={id} />
-            })}
-        </div>
-      )
-    } else {
-      books = (
-        <div className="bookings">
-          <h2 className="no-books">No current bookings!</h2>
-        </div>
-      )
-    }
+    // debugger
+    let books = (
+      <div className="private">
+        <h2 className="no-books">Private</h2>
+      </div>
+    )
+    if ( currentUserId === user.id ) {
+      if (user.bookingIds.length > 0) {
+        books = (
+          <div className="bookings">
+            {
+              user.bookingIds.map(id => {
+                return <BookingItemContainer booking={bookings[id]} key={id} />
+              })}
+          </div>
+        )
+      } else {
+        books = (
+          <div className="bookings">
+            <h2 className="no-books">No current bookings!</h2>
+          </div>
+        )
+      }
+    } 
     let date = new Date(user.created_at).toDateString()
     // debugger;
     return (
