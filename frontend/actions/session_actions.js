@@ -7,7 +7,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const FETCH_USER = 'FETCH_USER';
 
 export const receiveCurrentUser = payload => {
-  currentUser = payload.user;
+  let currentUser = payload.user;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
