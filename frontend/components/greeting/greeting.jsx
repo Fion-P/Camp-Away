@@ -11,7 +11,7 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
     <div className="header_logged">
       <ul>
         <li>
-          <h3 className="header-name">Hi, {currentUser.username}!</h3>
+          <h3 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h3>
         </li>
         <li>
           <h3><a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>

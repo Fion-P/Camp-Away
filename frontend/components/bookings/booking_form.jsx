@@ -60,7 +60,7 @@ class BookingForm extends React.Component {
     } else if (this.props.currentUser) {
       const booking = Object.assign({}, this.state);
       this.props.createBooking(booking);
-      this.props.history.push(`/camps`);
+      this.props.history.push(`/users/${this.props.currentUser.id}`);
     } else {
       this.props.openModal('login');
     }

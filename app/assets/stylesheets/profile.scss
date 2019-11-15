@@ -1,0 +1,121 @@
+.user-profile {
+  width: 1050px;
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.user-info {
+  width: 25%;
+  // background-color: pink;
+  padding: 10px;
+}
+
+.bookings {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.my-bookings {
+  width: 75%;
+  // background-color: rgb(165, 165, 228);
+  padding: 10px;
+}
+
+.my-bookings > h1 {
+  padding: 5px 5px 10px 5px;
+  font-size: 25px;
+  border-bottom: 1px solid #E0DEDE;
+  font-weight: 600;
+}
+
+.mountain {
+  font-size: 80px;
+}
+
+.profile-photo {
+  width: 45%;
+  padding: 5px;
+}
+
+.profile-top {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.profile-welcome{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-welcome h1{
+  color: #9E9898;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.profile-welcome h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.heart {
+  font-size: 13px;
+  color: #9E9898;
+}
+
+.member-since h1 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.member-since {
+  padding-left: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E0DEDE;
+  width: 100%;
+}
+
+.user-data {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.data-head {
+  font-weight: 600;
+  padding-right: 3px;
+}
+
+.user-data h1 {
+  padding-bottom: 3px;
+}
+
+.check {
+  font-size: 13px;
+}
+
+.trusted-camper {
+  font-size: 13px;
+}
+
+.trusted-camper {
+  border-top: 1px solid #E0DEDE;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.no-books {
+  font-size: 18px;
+  color: #9E9898;
+}

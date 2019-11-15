@@ -5,15 +5,21 @@ export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 
-const receiveBooking = booking => ({
-  type: RECEIVE_BOOKING,
-  booking,
-});
+const receiveBooking = ( {booking, camp} ) => {
+  return {
+    type: RECEIVE_BOOKING,
+    booking,
+    camp
+  }; 
+};
 
-const removeBooking = bookigId => ({
-  type: REMOVE_BOOKING,
-  bookigId
-});
+const removeBooking =({id, user_id, camp_id})=> {
+  return {
+    type: REMOVE_BOOKING,
+    bookingId: id,
+    user_id
+  }
+};
 
 export const receiveErrors = errors => ({
   type: RECEIVE_BOOKING_ERRORS,
@@ -37,7 +43,7 @@ export const updateBooking = booking => dispatch => (
 
 export const deleteBooking = bookingId => dispatch => (
   BookingAPIUtil.deleteBooking(bookingId)
-    .then(() => dispatch(removeBooking(bookingId)))
+    .then((booking) => dispatch(removeBooking(booking)))
 );
 
 export const clearErrors = () => dispatch => (

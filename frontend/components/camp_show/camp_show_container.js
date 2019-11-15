@@ -6,11 +6,14 @@ import CampShow from './camp_show';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { deleteReview, fetchReview  } from '../../actions/review_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  camp: state.entities.camps[ownProps.match.params.campId],
-  users: state.entities.users,
-  reviews: state.entities.reviews,
-});
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return {
+    camp: state.entities.camps[ownProps.match.params.campId],
+    users: state.entities.users,
+    reviews: state.entities.reviews,
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchCamp: (campId) => dispatch(fetchCamp(campId)),

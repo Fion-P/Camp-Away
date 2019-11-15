@@ -6,10 +6,13 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const FETCH_USER = 'FETCH_USER';
 
-export const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
-  currentUser
-});
+export const receiveCurrentUser = payload => {
+  currentUser = payload.user;
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  };
+}
 
 export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
@@ -20,10 +23,14 @@ export const receiveErrors = errors => ({
   errors
 });
 
-const receiveUser = user => ({
-  type: FETCH_USER,
-  user
-});
+const receiveUser = ({ user, bookings}) => {
+  // debugger;
+  return {
+    type: FETCH_USER,
+    user,
+    bookings
+  }
+};
 
 export const fetchUser = id => dispatch => (
   APIUtil.fetchUser(id).then(user => (

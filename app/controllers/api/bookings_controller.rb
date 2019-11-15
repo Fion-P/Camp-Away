@@ -3,7 +3,7 @@ class Api::BookingsController < ApplicationController
   before_action :require_login
 
   def create 
-    debugger
+    # debugger
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     # debugger
