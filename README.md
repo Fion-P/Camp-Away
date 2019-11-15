@@ -50,3 +50,4 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 * A day picker was implemented using a react-day-picker to allow for users to choose a day on a calendar 
 
 * A user can look at and cancel their bookings on their user profile page
+
