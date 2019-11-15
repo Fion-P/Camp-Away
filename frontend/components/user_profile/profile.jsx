@@ -32,8 +32,6 @@ class Profile extends React.Component {
   render() {
     const { user, fetchBooking, bookings, currentUserId} = this.props;
     if (!this.state.loaded) return null;
-    console.log(user);
-    // debugger
     let books = (
       <div className="private">
         <h2 className="no-books">Private</h2>
@@ -59,7 +57,6 @@ class Profile extends React.Component {
       }
     } 
     let date = new Date(user.created_at).toDateString()
-    // debugger;
     return (
       <div className="user-profile">
         <div className="user-info">

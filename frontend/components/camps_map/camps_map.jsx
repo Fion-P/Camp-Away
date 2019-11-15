@@ -10,7 +10,7 @@ class CampsMap extends React.Component {
       center: { lat: 37.7758, lng: -122.435 }, // this is SF
       zoom: 10
     };
-    console.log("working")
+    // console.log("working")
     // wrap this.mapNode in a Google Map
     // debugger
     this.map = new google.maps.Map(this.mapNode, mapOptions);
