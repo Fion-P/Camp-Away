@@ -35,13 +35,19 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 * Users who do not want to create an account are able to login as a demo user to navigate throughout the website and use it's features
 
+![alt tag](screenshots/login1.png)
+
 ### Camps
 
 * Users can browse through the campgrounds
 
+* The google maps API is used to help reference where the camps are
+
 * The camps show page displays the details, essentials, amenities, and activities which render differently depending on availability 
 
 * Users are also able to leave reviews on camp sites
+
+![alt tag](screenshots/camps-index.png)
 
 ### Bookings
 
@@ -51,3 +57,4 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 * A user can look at and cancel their bookings on their user profile page
 
+![alt tag](screenshots/bookings.png)
