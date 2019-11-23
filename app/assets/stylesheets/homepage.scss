@@ -82,3 +82,34 @@
 .search-button-cont button{
   margin-left: 50px;
 }
+
+// .featured {
+//   // padding: 30px 30px 30px 30px;
+//   display: flex;
+//   flex-direction: column;
+//   width: 900px;
+//   align-items: center;
+//   // justify-content: center;
+//   z-index: 0;
+// }
+
+.featured {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-content {
+  width: 900px;
+}
+
+.featured-camp {
+  padding-left: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured h1 {
+  font-family: 'Staatliches', cursive;
+  font-size: 30px;
+  padding: 10px 0 20px 0;
+}

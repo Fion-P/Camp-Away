@@ -1,5 +1,5 @@
 import React from 'react';
-import CampIndexItem from './camp_index_item'
+import CampIndexItem from './camp_index_item';
 
 class CampIndex extends React.Component {
 

@@ -20,6 +20,7 @@ class CampsMap extends React.Component {
       let marker = new google.maps.Marker({
         position: LatLng,
         map: this.map,
+        animation: google.maps.Animation.DROP,
         title: camps[i].camp_name
       });
       marker.setMap(this.map);
