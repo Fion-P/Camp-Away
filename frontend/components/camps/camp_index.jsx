@@ -3,28 +3,29 @@ import CampIndexItem from './camp_index_item'
 
 class CampIndex extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state =  {
-      loaded: false
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state =  {
+  //     loaded: false
+  //   };
+  // }
 
-  componentDidMount() {
-    this.props.fetchCamps()
-      .then(() => {
-        this.setState( {loaded: true} );
-      });
-  }
+  // componentDidMount() {
+  //   this.props.fetchCamps()
+  //     .then(() => {
+  //       this.setState( {loaded: true} );
+  //     });
+  // }
 
   render() {
     let camps = this.props.camps;
-    if (!this.state.loaded) {
-      return (
-        <div>
-        </div>
-      )
-    }
+    // if (!this.state.loaded) {
+    //   return (
+    //     <div>
+    //     </div>
+    //   )
+    // }
+    // debugger;
     return (
       <div className="indexPage">
         <div className="camps">

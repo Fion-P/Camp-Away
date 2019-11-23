@@ -14,11 +14,22 @@ class CampsMap extends React.Component {
     // wrap this.mapNode in a Google Map
     // debugger
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.camps);
+    let camps = this.props.camps;
+    for (let i = 0; i < camps.length ; i++) {
+      let LatLng = { lat: camps[i].latitude, lng: camps[i].longitude};
+      let marker = new google.maps.Marker({
+        position: LatLng,
+        map: this.map,
+        title: camps[i].camp_name
+      });
+      marker.setMap(this.map);
+    }
+    // this.MarkerManager = new MarkerManager(this.map);
+    // this.MarkerManager.updateMarkers(this.props.camps);
   }
 
   render() {
+    // debugger;
     return (
       <div id='map-container' ref={map => this.mapNode = map}>
       </div>
