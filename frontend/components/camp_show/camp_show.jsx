@@ -12,6 +12,13 @@ import { Link } from 'react-router-dom';
 
 class CampShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      loaded: false
+    };
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchCamp(this.props.match.params.campId)
@@ -22,7 +29,9 @@ class CampShow extends React.Component {
             return this.props.fetchReview(id);
           });
         }
-      );
+    ).then(() => {
+      this.setState({ loaded: true });
+    });
   }
 
   componentDidUpdate(prevProps) {
@@ -32,6 +41,12 @@ class CampShow extends React.Component {
   }
 
   render () {
+    if (!this.state.loaded) {
+      return (
+        <div>
+        </div>
+      )
+    }
     let camp = this.props.camp;
     if (!camp) return null;
     let activities = this.props.camp.activities;
@@ -98,7 +113,7 @@ class CampShow extends React.Component {
 
             <div className="question" >
               <h1 onClick={() => this.props.openModal('message')}>
-                Have a question? <span className="message" >Send Host a message!</span>
+                Have a question? <span className="message-link" >Send Host a message!</span>
               </h1>
             </div>
 

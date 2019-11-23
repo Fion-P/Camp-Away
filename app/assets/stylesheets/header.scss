@@ -31,12 +31,12 @@
 
 .header_unlogged ul li{
   margin-left: 29px;
-  border-bottom: 1px solid rgb(212, 192, 170);
+  // border-bottom: 1px solid rgb(212, 192, 170);
   font-size: 13px;
 }
 
 .header_unlogged ul li:hover{
-  border-bottom: 1px solid rgb(182, 165, 146);
+  // border-bottom: 1px solid rgb(182, 165, 146);
   color: rgb(182, 165, 146);
 }
 
@@ -65,7 +65,7 @@
 
 .header_logged ul li{
   margin-left: 29px;
-  border-bottom: 1px solid rgb(212, 192, 170);
+  // border-bottom: 1px solid rgb(212, 192, 170);
   font-size: 11px;
 }
 
@@ -102,9 +102,9 @@
 }
 
 .top-left {
-  animation-name: fadeInDown;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  // animation-timing-function: ease-in;
 }
 
 .page-top {

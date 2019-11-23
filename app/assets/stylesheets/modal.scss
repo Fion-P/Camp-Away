@@ -4,13 +4,13 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(149, 146, 146, 0.7);
   z-index: 100;
 }
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

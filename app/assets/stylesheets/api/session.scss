@@ -11,6 +11,9 @@
   width: 340px;
   background-color: white;
   // box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
+  animation-name: fadeInDown;
+  animation-duration: 1.2s;
+  // animation-timing-function: ease-in;
 }
 
 .formInside{
@@ -18,14 +21,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid rgb(182, 165, 146);
-  box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
+  // border: 2px solid rgb(182, 165, 146);
+  // box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
   background: white;
 }
 
 .formInside h3{
   text-align: center;
-  font-family: 'Staatliches', cursive;
+  // font-family: 'Staatliches', cursive;
   font-size: 25px;
   margin: 5px 0 5px 0;
 }
@@ -50,7 +53,7 @@
 .form input{
   width: 301px;
   height: 45px;
-  border: 1.5px solid rgb(182, 165, 146);
+  border: 1px solid rgb(182, 165, 146);
   border-radius: 1px;
 }
 
@@ -67,7 +70,7 @@
 
 .formInside h4{
   text-align: center;
-  font-family: 'Staatliches', cursive;
+  // font-family: 'Staatliches', cursive;
   font-size: 15px;
   margin: 2px 0 2px 0;
   color: #777777;
@@ -100,7 +103,7 @@
 
 .demo {
   background-color: #3A5998 ;
-  border: 2px solid #3A5998; 
+  border: 1px solid #3A5998; 
 }
 
 .demo:hover {

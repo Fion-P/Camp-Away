@@ -15,7 +15,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def show
-    @booking = current_user.bookings.find(params[:id])
+    @booking = current_user.bookings.includes(:user).includes(:camp).find(params[:id])
   end
 
   def update

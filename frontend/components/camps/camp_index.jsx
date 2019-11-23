@@ -2,12 +2,29 @@ import React from 'react';
 import CampIndexItem from './camp_index_item'
 
 class CampIndex extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state =  {
+      loaded: false
+    };
+  }
+
   componentDidMount() {
-    this.props.fetchCamps();
+    this.props.fetchCamps()
+      .then(() => {
+        this.setState( {loaded: true} );
+      });
   }
 
   render() {
     let camps = this.props.camps;
+    if (!this.state.loaded) {
+      return (
+        <div>
+        </div>
+      )
+    }
     return (
       <div className="indexPage">
         <div className="camps">

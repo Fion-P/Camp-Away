@@ -33,15 +33,15 @@
 
 .CMaps {
   width: 40%;
-  padding-top: 5%;
   box-sizing: border-box;
-  max-height: 400px;
-  display: flex;
-  justify-content: flex-start;
   animation-name: fadeIn;
   animation-duration: 2s;
   background: none;
   background-color: none;
+  position: sticky;
+  align-self: flex-start;
+  top: 70px;
+  margin-top: 5%;
 }
 
 .campIndexItem {
@@ -131,15 +131,17 @@
   padding-right: 0.5%;
 }
 
- #map-container {
-   width: 80%;
-   height: 100%;
-    // z-index: 2;
-    // position: sticky;
-    background: none;
-    background-color: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
+#map-container {
+  width: 80%;
+  height: 450px;
+  background: none;
+  background-color: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+element.style {
+  background-color: none;
+}
 
  .index-photo img {
    height: 190px;

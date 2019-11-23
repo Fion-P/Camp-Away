@@ -138,12 +138,12 @@
   font-weight: 1000;
 }
 
-.message {
+.message-link {
   color: #8DE7CC;
 }
 
-.message:hover {
-  text-decoration: underline rgb(130, 221, 194);
+.message-link:hover {
+  text-decoration: underline #8DE7CC;
   cursor: pointer;
 }
 

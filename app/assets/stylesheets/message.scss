@@ -1,14 +1,28 @@
 .message {
   background-color: white;
   padding: 20px;
+  animation-name: fadeInUp;
+  animation-duration: 1.1s;
+  // animation-name: fadeOut;
+  // animation-duration: 1.1s;
 }
 
+
 .message-form{
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
 }
 
 #message-errors {
   color: rgb(95, 19, 19);
   font-size: 14px;
   text-align: center;
+}
+
+.message-form textarea {
+  border: 0.5px solid rgb(119, 119, 119);
+  padding: 10px;
+}
+
+.host-message {
+  margin-bottom: 10px;
 }

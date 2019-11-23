@@ -1,6 +1,9 @@
 .edit-review-form {
   background-color: white;
   padding: 10px;
+  opacity: .9;
+  animation-name: fadeInUp;
+  animation-duration: 1.1s;
 }
 
 .edit-form {
@@ -19,7 +22,7 @@
 }
 
 .edit-input textarea{
-  border: 1px solid black;
+  border: .5px solid rgb(131, 131, 131);
   padding: 10px;
   margin-bottom: 10px;
 }

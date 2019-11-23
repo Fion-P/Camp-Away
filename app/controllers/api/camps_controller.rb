@@ -1,11 +1,11 @@
 class Api::CampsController < ApplicationController
   def show 
-    @camp = Camp.find(params[:id])
+    @camp = Camp.includes(:host).find(params[:id])
     render :show
   end
 
   def index
-    @camps = Camp.all 
+    @camps = Camp.all
     render :index
   end
 
