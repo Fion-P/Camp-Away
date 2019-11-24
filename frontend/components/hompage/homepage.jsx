@@ -35,7 +35,7 @@ class HomePage extends React.Component {
       )
     }
     let featured = [];
-    for (let i = 0; i < 3; i ++) {
+    for (let i = 5; i < 8; i ++) {
       featured.push(camps[i])
     }
     console.log(featured);

@@ -29,8 +29,9 @@
   // position: -webkit-sticky;
   position: sticky;
   align-self: flex-start;
-  top: 70px;
+  top: 55px;
   margin-top: -80px;
+  // z-index: 99;
 }
 
 .campinfo {
@@ -71,7 +72,7 @@
 .camp-description {
   display: flex;
   flex-wrap: wrap;
-  max-height: 210px;
+  min-height: 210px;
   padding: 3% 5% 3% 0;
 }
 

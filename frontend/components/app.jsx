@@ -23,7 +23,7 @@ const App = () => {
         <nav className=".nav-bar">
           <span className='header'>
             {/* <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link> */}
-            <h1><Link to="/">Camp Away!</Link>
+            <h1><Link to="/">Camp Away</Link>
             </h1>
           </span>
           <span className="nav-right">
