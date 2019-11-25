@@ -73,10 +73,18 @@ class BookingForm extends React.Component {
     //   defaultCheckOut = new Date(this.state.check_in);
     //   defaultCheckOut = defaultCheckOut.setDate(defaultCheckOut.getDate() + camp.minimum_nights);
     // }
+    let first = this.state.check_in;
+    let second;
+    if (!first) {
+      second
+    } else {
+      second = new Date(this.state.check_in);
+      second.setDate(second.getDate() + this.props.camp.minimum_nights);
+    }
     return (
       <div className='booking-form'>
         <h1>${this.props.camp.price}</h1>
-        <h2>per night</h2>
+        <h2>per night (minimum {this.props.camp.minimum_nights} nights)</h2>
         <form >
             <div className='booking-input-items'>
               <div className='booking-input'>
@@ -105,7 +113,7 @@ class BookingForm extends React.Component {
                     parseDate={parseDate}
 
                     dayPickerProps={{
-                      disabledDays: { before: new Date(this.state.check_in) },
+                      disabledDays: { before: second },
                     }}
 
                   />
