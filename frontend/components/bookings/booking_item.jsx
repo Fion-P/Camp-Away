@@ -1,5 +1,5 @@
 import React from 'react';
-import CampIndexItem from '../camps/camp_index_item';
+// import CampIndexItem from '../camps/camp_index_item';
 import { Link } from 'react-router-dom';
 
 class BookingItem extends React.Component {
