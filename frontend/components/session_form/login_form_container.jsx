@@ -6,9 +6,16 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = ({errors}) => {
+  // let currentUser 
+  // if (!state.entities.users) {
+  //   currentUser = null
+  // } else {
+  //   currentUser = state.entities.users[state.session.id];
+  // }
   return {
     errors: errors.session,
-    formType: 'login'
+    formType: "login",
+    // currentUser: currentUser
   };
 };
 

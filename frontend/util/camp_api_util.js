@@ -1,7 +1,8 @@
-export const fetchCamps = () => (
+export const fetchCamps = (filters) => (
   $.ajax({
     method: 'GET',
     url: '/api/camps',
+    data: filters
   })
 );
 

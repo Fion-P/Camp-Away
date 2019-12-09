@@ -6,8 +6,9 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
+  // currentUser: state.entities.users[state.session.id],
   errors: state.errors.session,
-  formType: 'signup'
+  formType: "signup"
 });
 
 const mapDispatchToProps = (dispatch) => ({

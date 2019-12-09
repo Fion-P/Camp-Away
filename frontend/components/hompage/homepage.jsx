@@ -38,7 +38,7 @@ class HomePage extends React.Component {
     for (let i = 5; i < 8; i ++) {
       featured.push(camps[i])
     }
-    console.log(featured);
+    // console.log(featured);
     return (
       <div className="home-page">
         <div className="page-top">

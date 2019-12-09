@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountain } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -35,7 +36,10 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    this.props.processForm(user)
+      .then(res => this.props.history.push(`/users/${res.currentUser.id}`))
+      .then(this.props.closeModal);
+      // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
   }
 
   renderErrors() {
@@ -121,4 +125,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

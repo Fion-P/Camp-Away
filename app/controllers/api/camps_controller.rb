@@ -5,10 +5,14 @@ class Api::CampsController < ApplicationController
   end
 
   def index
-    @camps = Camp.all
-    render :index
+  # @camps = Camp.all
+  if params[:bounds]
+      @camps = Camp.all.select { |camp| camp.in_bounds(params[:bounds]) }
+    else
+      @camps = Camp.all
+    end
   end
 
+  private
+  
 end
-
-

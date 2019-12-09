@@ -15,8 +15,8 @@ export const receiveCamp = ({ camp, reviews, authors }) => ({
   authors,
 });
 
-export const fetchCamps = () => dispatch => (
-  APIUtil.fetchCamps().then(camps => (
+export const fetchCamps = (filters) => dispatch => (
+  APIUtil.fetchCamps(filters).then(camps => (
     dispatch(receiveCamps(camps))
   ))
 );
