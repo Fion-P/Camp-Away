@@ -79,7 +79,8 @@ class CampShow extends React.Component {
           <div className="campinfo">
             <div className="campTitle">
               <div className="tags">   
-                <span className="nametags"><Link to={`/camps`}>{camp.location}</Link></span> > <span className="nametags">{camp.camp_name}</span> >
+                <span className="nametags"><Link to={`/camps`}>{camp.location}</Link></span> > 
+                <span className="nametags"><a href={`http://maps.google.com/?q=${camp.latitude},${camp.longitude}`}> {camp.camp_name} </a></span> >
               </div>
               <h1>
                 {camp.camp_name}

@@ -1,6 +1,6 @@
 class Api::CampsController < ApplicationController
   def show 
-    @camp = Camp.includes(:host).find(params[:id])
+    @camp = Camp.includes(:host).with_attached_photos.find(params[:id])
     render :show
   end
 
