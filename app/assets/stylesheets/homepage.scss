@@ -60,9 +60,21 @@
   height: 50px;
 }
 
+// .search-text {
+//   margin: 14px;
+//   padding-top: 5px;
+// }
+
 .search-text {
+  font-size: 20px;
+  font-weight: 300;
+  color: #808080;
+  width: 90%;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0;
   margin: 14px;
-  padding-top: 5px;
 }
 
 .search-area {
@@ -81,6 +93,12 @@
 
 .search-button-cont button{
   margin-left: 50px;
+  
+}
+
+.search-button-cont {
+  display: flex;
+  align-items: center;
 }
 
 // .featured {

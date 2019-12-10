@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { setTimeout } from 'timers';
 import CampIndexItem from '../camps/camp_index_item';
+import SearchBar from '../search/search_bar';
 
 
 class HomePage extends React.Component {
@@ -51,7 +52,7 @@ class HomePage extends React.Component {
             <img src="/image.jpg" />
           </div>
         </div>
-        <div className="search">
+        {/* <div className="search">
           <div className="search-area">
             <div className="search-bar">
               <FontAwesomeIcon icon={faSearch} className="icon4" />
@@ -61,7 +62,8 @@ class HomePage extends React.Component {
               <button className="search-button" >Search</button>
             </span>
           </div>
-        </div>
+        </div> */}
+        <SearchBar />
         <div className="featured">
           <div className="featured-content">
             <h1>Featured Camps</h1>

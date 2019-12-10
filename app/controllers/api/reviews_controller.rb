@@ -16,7 +16,7 @@ class Api::ReviewsController < ApplicationController
 
   def show
     # debugger
-    @review = Review.find(params[:id])
+    @review = Review.includes(:author).includes(:camp).find(params[:id])
   end
 
   def update
