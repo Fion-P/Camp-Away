@@ -29,6 +29,7 @@ class Search extends React.Component {
     this.props.fetchCamps()
       .then(() => {
         this.setState({ loaded: true });
+        console.log(this.props);
       });
   }
 
@@ -40,6 +41,9 @@ class Search extends React.Component {
         </div>
       )
     }
+
+    //fetch query string to get location coordinates
+    let query = this.props.location.search
     
     return (
       <div className="mapCamps">
@@ -47,7 +51,7 @@ class Search extends React.Component {
           <CampIndex camps={camps} />
         </div>
         <div className="CMaps">
-          <CampsMap camps={camps} />
+          <CampsMap camps={camps} query={query}/>
         </div>  
       </div>
     )

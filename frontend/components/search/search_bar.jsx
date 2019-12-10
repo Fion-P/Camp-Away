@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { setTimeout } from "timers";
+// import { setTimeout } from "timers";
+import { withRouter } from "react-router-dom";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class SearchBar extends React.Component {
         lng = res[0].geometry.location.lng();
         console.log(lat);
         console.log(lng);
+        this.props.history.push(`/camps?lat=${lat}&lng=${lng}`);
       }
     });
   }
@@ -84,4 +86,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar
+export default withRouter(SearchBar);

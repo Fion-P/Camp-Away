@@ -5,14 +5,25 @@ class CampsMap extends React.Component {
 
 
   componentDidMount() {
-    // set the map to show SF
+    const queryString = this.props.query;
+    let lat 
+    let lng 
+
+    if (!queryString) {
+      // default to SF
+      lat = 37.7758;
+      lng = -122.435;
+    } else {
+      // set to user search
+      lat = parseFloat(queryString.split("=")[1].split("&")[0]);
+      lng = parseFloat(queryString.split("=")[2]);
+    }
+
     const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
-      zoom: 5
+      center: { lat: lat, lng: lng },
+      zoom: 8
     };
-    // console.log("working")
-    // wrap this.mapNode in a Google Map
-    // debugger
+
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     let camps = this.props.camps;
     for (let i = 0; i < camps.length ; i++) {
