@@ -25,11 +25,9 @@ class SearchBar extends React.Component {
       if (!autocomplete.getPlace().formatted_address) {
         address = autocomplete.getPlace().name;
         that.setState({ address: address });
-        // that.handleSubmit();
       } else {
         address = autocomplete.getPlace().formatted_address;
         that.setState({ address: address });
-        // that.handleSubmit();
       }
     });
   }
@@ -49,15 +47,14 @@ class SearchBar extends React.Component {
 
     // Create new Geocoder to convert address into lat/lng
     let location = new google.maps.Geocoder();
-    console.log(this.state)
     location.geocode({"address": this.state.address}, (res, status) => {
-      // debugger;
-      console.log(status);
       if (status === "OK") {
         lat = res[0].geometry.location.lat();
         lng = res[0].geometry.location.lng();
-        console.log(lat);
-        console.log(lng);
+        this.props.history.push(`/camps?lat=${lat}&lng=${lng}`);
+      } else {
+        lat = 37.7758;
+        lng = -122.435;
         this.props.history.push(`/camps?lat=${lat}&lng=${lng}`);
       }
     });

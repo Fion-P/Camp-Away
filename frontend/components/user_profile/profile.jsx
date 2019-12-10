@@ -37,7 +37,6 @@ class Profile extends React.Component {
         <h2 className="no-books">Private</h2>
       </div>
     )
-      console.log(bookings)
     // let validBookings = bookings.sort(function(a, b) {
     //   return (new Date(a.time) - new Date(b.time));
     // });

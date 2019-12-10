@@ -29,7 +29,7 @@ class Search extends React.Component {
     this.props.fetchCamps()
       .then(() => {
         this.setState({ loaded: true });
-        console.log(this.props);
+        // console.log(this.props);
       });
   }
 
