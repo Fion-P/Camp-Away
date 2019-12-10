@@ -9,6 +9,8 @@ class SearchBar extends React.Component {
     this.state = {
       address: ""
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -22,11 +24,11 @@ class SearchBar extends React.Component {
       if (!autocomplete.getPlace().formatted_address) {
         address = autocomplete.getPlace().name;
         that.setState({ address: address });
-        that.handleSubmit();
+        // that.handleSubmit();
       } else {
         address = autocomplete.getPlace().formatted_address;
         that.setState({ address: address });
-        that.handleSubmit();
+        // that.handleSubmit();
       }
     });
   }
@@ -35,6 +37,28 @@ class SearchBar extends React.Component {
     return (e) => {
       this.setState({ address: e.target.value });
     };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    //initiate lat and lng 
+    let lat;
+    let lng;
+
+    // Create new Geocoder to convert address into lat/lng
+    let location = new google.maps.Geocoder();
+    console.log(this.state)
+    location.geocode({"address": this.state.address}, (res, status) => {
+      // debugger;
+      console.log(status);
+      if (status === "OK") {
+        lat = res[0].geometry.location.lat();
+        lng = res[0].geometry.location.lng();
+        console.log(lat);
+        console.log(lng);
+      }
+    });
   }
 
   render() {
@@ -52,7 +76,7 @@ class SearchBar extends React.Component {
             />
           </div>
           <span className="search-button-cont">
-            <button className="search-button">Search</button>
+            <button className="search-button" onClick={this.handleSubmit}>Search</button>
           </span>
         </div>
       </div>
