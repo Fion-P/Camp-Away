@@ -5,14 +5,19 @@ class Api::CampsController < ApplicationController
   end
 
   def index
-  # @camps = Camp.all
-  if params[:bounds]
-      @camps = Camp.all.select { |camp| camp.with_attached_photos.includes(:host).includes(:bookings).in_bounds(params[:bounds]) }
-    else
-      @camps = Camp.all
-    end
+    camps = bounds ? Camp.in_bounds(bounds) : Camp.all
+    @camps = camps.with_attached_photos.includes(:host).includes(:bookings)
+    # if params[:bounds]
+    #   @camps = Camp.all.select { |camp| camp.with_attached_photos.includes(:host).includes(:bookings).in_bounds(params[:bounds]) }
+    # else
+    #   @camps = Camp.all
+    # end
   end
 
   private
   
+  def bounds
+    params[:bounds]
+  end
+
 end

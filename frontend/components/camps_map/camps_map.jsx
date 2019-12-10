@@ -1,13 +1,12 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
+import { withRouter } from "react-router-dom";
 
 class CampsMap extends React.Component {
-
-
   componentDidMount() {
     const queryString = this.props.query;
-    let lat 
-    let lng 
+    let lat;
+    let lng;
 
     if (!queryString) {
       // default to SF
@@ -26,27 +25,35 @@ class CampsMap extends React.Component {
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     let camps = this.props.camps;
-    for (let i = 0; i < camps.length ; i++) {
-      let LatLng = { lat: camps[i].latitude, lng: camps[i].longitude};
-      let marker = new google.maps.Marker({
-        position: LatLng,
-        map: this.map,
-        animation: google.maps.Animation.DROP,
-        title: camps[i].camp_name
-      });
-      marker.setMap(this.map);
-    }
-    // this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers(this.props.camps);
+    // for (let i = 0; i < camps.length; i++) {
+    //   let LatLng = { lat: camps[i].latitude, lng: camps[i].longitude };
+    //   let marker = new google.maps.Marker(
+    //     {
+    //       position: LatLng,
+    //       map: this.map,
+    //       animation: google.maps.Animation.DROP,
+    //       title: camps[i].camp_name
+    //     },
+    //     this.handleMarkerClick.bind(this)
+    //   );
+    //   marker.setMap(this.map);
+    // }
+    this.MarkerManager = new MarkerManager(
+      this.map,
+      this.handleMarkerClick.bind(this)
+    );
+    this.MarkerManager.updateMarkers(this.props.camps);
+  }
+
+  handleMarkerClick(camp) {
+    console.log(camp);
+    this.props.history.push(`camps/${camp.id}`);
   }
 
   render() {
     // debugger;
-    return (
-      <div id='map-container' ref={map => this.mapNode = map}>
-      </div>
-    )
+    return <div id="map-container" ref={map => (this.mapNode = map)}></div>;
   }
 }
 
-export default CampsMap;
+export default withRouter(CampsMap);
