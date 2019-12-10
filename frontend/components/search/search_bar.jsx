@@ -6,6 +6,35 @@ import { setTimeout } from "timers";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      address: ""
+    };
+  }
+
+  componentDidMount() {
+    let input = document.getElementById("search-text");
+    let autocomplete = new google.maps.places.Autocomplete(input);
+
+    let address;
+
+    let that = this;
+    autocomplete.addListener("place_changed", () => {
+      if (!autocomplete.getPlace().formatted_address) {
+        address = autocomplete.getPlace().name;
+        that.setState({ address: address });
+        that.handleSubmit();
+      } else {
+        address = autocomplete.getPlace().formatted_address;
+        that.setState({ address: address });
+        that.handleSubmit();
+      }
+    });
+  }
+
+  handleInput() {
+    return (e) => {
+      this.setState({ address: e.target.value });
+    };
   }
 
   render() {
@@ -15,9 +44,11 @@ class SearchBar extends React.Component {
           <div className="search-bar">
             <FontAwesomeIcon icon={faSearch} className="icon4" />
             <input
-              className="search-text"
+              id="search-text"
+              // className="search-text"
               type="search"
               placeholder="Find camping near..."
+              onChange={this.handleInput}
             />
           </div>
           <span className="search-button-cont">

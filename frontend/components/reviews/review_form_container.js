@@ -8,10 +8,11 @@ const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id]
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+  return {
   createReview: review => dispatch(createReview(review)),
   openModal: modal => dispatch(openModal(modal)),
-});
+}};
 
 export default connect(
   mapStateToProps,
