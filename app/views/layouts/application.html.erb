@@ -4,11 +4,10 @@
     <title>CampAway</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <%# <link rel="stylesheet" href="animate.min.css"> %>
     <%= javascript_include_tag 'application' %>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI3KS5AyUFYiAgV6Zzpj52R4OKX7z8Lkc&libraries=places"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPjYkDq0-iiCd6W5-qCw46J-r0EW39L1U&libraries=places"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google[:api_key] %>&libraries=places"></script>
 
