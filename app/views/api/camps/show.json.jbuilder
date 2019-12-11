@@ -17,3 +17,12 @@ end
   end
 end
 
+# json.host do {
+  # json.set! @camp.host.id do 
+  #   json.extract! @camp.host, :id, :first_name, :last_name
+  # end
+# }
+
+json.host do 
+  json.partial! "/api/users/user", user: @camp.host
+end

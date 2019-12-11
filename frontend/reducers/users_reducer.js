@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER, FETCH_USER } from '../actions/session_actions';
 import { RECEIVE_BOOKING, REMOVE_BOOKING } from '../actions/booking_actions';
-
+import { RECEIVE_CAMP } from '../actions/camp_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -23,6 +23,9 @@ const usersReducer = (state = {}, action) => {
       let newState = Object.assign({}, state);
       newState[booking.user_id].bookingIds.push(booking.id);
       return newState;
+    case RECEIVE_CAMP:
+      if (action.host) return Object.assign({}, state, { [action.host.id]: action.host });;
+      return state;
     default:
       return state;
   }

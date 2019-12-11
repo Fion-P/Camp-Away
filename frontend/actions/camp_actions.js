@@ -8,12 +8,15 @@ export const receiveCamps = camps => ({
   camps,
 });
 
-export const receiveCamp = ({ camp, reviews, authors }) => ({
-  type: RECEIVE_CAMP,
-  camp,
-  reviews,
-  authors,
-});
+export const receiveCamp = ({ camp, reviews, authors, host }) => {
+  return {
+    type: RECEIVE_CAMP,
+    camp,
+    reviews,
+    authors,
+    host
+  }
+};
 
 export const fetchCamps = (filters) => dispatch => (
   APIUtil.fetchCamps(filters).then(camps => (

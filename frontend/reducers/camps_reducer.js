@@ -1,5 +1,6 @@
 import { RECEIVE_CAMPS, RECEIVE_CAMP } from "../actions/camp_actions";
 import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
+import { FETCH_USER } from '../actions/session_actions';
 
 const campsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -28,6 +29,9 @@ const campsReducer = (state = {}, action) => {
       let idx = thisState[camp_id].reviewIds.indexOf(id);
       thisState[camp_id].reviewIds.splice(idx, 1);
       return thisState;
+    case FETCH_USER:
+      if (action.camps) return action.camps;
+      return state;
     default:
       return state;
   }

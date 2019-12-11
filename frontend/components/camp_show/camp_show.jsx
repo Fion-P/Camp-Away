@@ -22,14 +22,7 @@ class CampShow extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchCamp(this.props.match.params.campId)
-      .then( 
-        res => {
-          this.props.fetchUser(res.camp.host_id);
-          res.camp.reviewIds.map((id) => {
-            return this.props.fetchReview(id);
-          });
-        }
-    ).then(() => {
+      .then(() => {
       this.setState({ loaded: true });
     });
   }

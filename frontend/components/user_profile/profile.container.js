@@ -7,7 +7,7 @@ import { fetchUser } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   // debugger;
   return {
-    bookings: state.entities.bookings,
+    bookings: Object.values(state.entities.bookings),
     currentUserId: state.session.id,
     user: state.entities.users[ownProps.match.params.userId]
   };

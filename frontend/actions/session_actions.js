@@ -7,6 +7,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const FETCH_USER = 'FETCH_USER';
 
 export const receiveCurrentUser = payload => {
+  // debugger;
   let currentUser = payload.user;
   return {
     type: RECEIVE_CURRENT_USER,
@@ -23,12 +24,13 @@ export const receiveErrors = errors => ({
   errors
 });
 
-const receiveUser = ({ user, bookings}) => {
+const receiveUser = ({user, bookings, camps}) => {
   // debugger;
   return {
     type: FETCH_USER,
     user,
-    bookings
+    bookings,
+    camps
   }
 };
 

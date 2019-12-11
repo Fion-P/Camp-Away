@@ -17,9 +17,11 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId)
-      .then(() => this.setState({
-        loaded: true
-      }));
+      .then(() => {
+        this.setState({
+          loaded: true
+        });
+      });
 
   }
 
@@ -37,19 +39,19 @@ class Profile extends React.Component {
         <h2 className="no-books">Private</h2>
       </div>
     )
-    // let validBookings = bookings.sort(function(a, b) {
-    //   return (new Date(a.time) - new Date(b.time));
-    // });
-    // console.log(validBookings)
+    let sortedBookings = bookings.sort(function(a, b) {
+      return (new Date(a.check_in) - new Date(b.check_in));
+    });
     if (!user) return null;
     if ( currentUserId === user.id ) {
       if (user.bookingIds.length > 0) {
         books = (
           <div className="bookings">
             {
-              user.bookingIds.map(id => {
-                return <BookingItemContainer booking={bookings[id]} key={id} />
-              })}
+              sortedBookings.map ( booking => {
+                return <BookingItemContainer booking={booking} key={booking.id} />
+              })
+            }
           </div>
         )
       } else {
