@@ -15,10 +15,6 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location.pathname);
-    if (this.props.location.pathname.slice(0, 6) === "/users") {
-      
-    }
     let input = document.getElementById("search-text");
     let autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -38,12 +34,6 @@ class SearchBar extends React.Component {
     });
   }
 
-  // componentDidUpdate(oldProps) {
-  //   if (oldProps.location.pathname !== this.props.location.pathname) {
-  //     this.setState({address: ""});
-  //   }
-  // }
-
   handleInput() {
     return e => {
       this.setState({ address: e.target.value });
@@ -51,8 +41,8 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit() {
-    // e.preventDefault();
     let address = this.state.address;
+
     //initiate lat and lng
     let lat;
     let lng;
