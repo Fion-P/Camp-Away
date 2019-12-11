@@ -2,7 +2,7 @@
   width: 1050px;
   display: flex;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
   animation-name: fadeIn;
   animation-duration: 3s;
 }
@@ -11,6 +11,12 @@
   width: 25%;
   // background-color: pink;
   padding: 10px;
+  height: 280px;
+  position: sticky;
+  position: -webkit-sticky;
+  align-self: flex-start;
+  z-index: 10;
+  top: 70px;
 }
 
 .bookings {

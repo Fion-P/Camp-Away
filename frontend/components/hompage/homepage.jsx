@@ -4,6 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { setTimeout } from 'timers';
 import CampIndexItem from '../camps/camp_index_item';
 import SearchBar from '../search/search_bar';
+import Prefooter from "../prefooter/prefooter";
 
 
 class HomePage extends React.Component {
@@ -77,6 +78,7 @@ class HomePage extends React.Component {
             </div>
           </div>
         </div>
+        < Prefooter />
       </div>
     )
   }

@@ -12,8 +12,6 @@ nav {
   top: 0;
   box-shadow: 1px 1px 6px 1px rgba(216, 213, 213, 0.2);
   z-index: 99;
-  // opacity: 1;
-  // background-color: rgb(246, 242, 242);
   background-color: white;
 }
 
@@ -27,20 +25,13 @@ nav {
 
 .body {
   margin-top: 50px;
-  // margin-top: 25px;
-  // z-index: 1;
-  // position: absolute;
   align-self: center;
-  // margin-bottom: -10px;
 }
 
 
 
 .footer {
-  margin-top: -40px;
   z-index: -1;
-  // margin-top: -150px;
-  // position: absolute;
   width: 100%;
 }
 

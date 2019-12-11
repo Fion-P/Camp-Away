@@ -1,0 +1,36 @@
+.prefooter {
+  padding-top: 46px;
+  padding-bottom: 46px;
+  display: flex;
+  justify-content: center;
+}
+
+.prefooter-content {
+  width: 840px;
+  border: 1px solid #EBEBEB;
+  box-shadow: 0 2px 2px #dbd8d8;
+  padding: 30px 50px 30px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dev-picture {
+  width: 39%;
+  // height: 350px;
+}
+
+.dev-bio {
+  width: 50%;
+}
+
+.dev-bio h1 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 540;
+  padding-bottom: 15px;
+}
+
+.dev-bio h2 {
+  overflow-wrap: normal;
+  line-height: 1.6;
+}
