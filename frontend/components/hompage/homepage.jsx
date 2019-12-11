@@ -46,24 +46,13 @@ class HomePage extends React.Component {
         <div className="page-top">
           <div className="top-left">
               <h1>Find yourself outside.</h1>
-              <h2>Book unique camping experiences on over 300,000</h2>
+            <h2>Book unique camping experiences on over <b>300,000</b></h2>
               <h2>campsites, cabins, RV parks, public parks and more.</h2>
           </div>
           <div className="top-right">
             <img src="/image.jpg" />
           </div>
         </div>
-        {/* <div className="search">
-          <div className="search-area">
-            <div className="search-bar">
-              <FontAwesomeIcon icon={faSearch} className="icon4" />
-              <input className="search-text" type="search" placeholder="Find camping near..." />
-            </div>
-            <span className="search-button-cont">
-              <button className="search-button" >Search</button>
-            </span>
-          </div>
-        </div> */}
         <SearchBar />
         <div className="featured">
           <div className="featured-content">

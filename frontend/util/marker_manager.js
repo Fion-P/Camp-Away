@@ -10,7 +10,8 @@ class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      campId: camp.id
+      campId: camp.id,
+      icon: "smallpin.png"
     });
 
     marker.addListener('click', () => this.handleClick(camp));
