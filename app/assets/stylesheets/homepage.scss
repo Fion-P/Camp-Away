@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .page-top {
   padding: 5px 30px 30px 30px;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  justify-content: space-around;
   z-index: 0;
+  // width: 1100px;
+  width: 1150px;
 }
 
 
@@ -36,7 +40,8 @@
 }
 
 .top-right {
-  padding-left: 50px;
+  // padding-left: 50px;
+  padding: 0px 26px 0 0;
 }
 
 .search {
@@ -117,11 +122,14 @@
 }
 
 .featured-content {
-  width: 900px;
+  // width: 900px;
+  width: 1000px;
 }
 
 .featured-camp {
-  padding-left: 2px;
+  // padding-left: 2px;
+  // padding-left: 35px;
+  padding: 0 35px 0 35px;
   display: flex;
   justify-content: space-between;
 }
@@ -129,5 +137,6 @@
 .featured h1 {
   font-family: "Calibre", Helvetica, Arial, Helvetica, sans-serif;
   font-size: 30px;
-  padding: 10px 0 20px 0;
+  // padding: 10px 0 20px 0;
+  padding: 10px 0 20px 5px;
 }
