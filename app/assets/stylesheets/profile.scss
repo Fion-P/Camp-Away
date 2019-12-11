@@ -35,10 +35,17 @@
 }
 
 .my-bookings > h1 {
-  padding: 5px 5px 10px 5px;
+  padding: 10px 5px 10px 5px;
   font-size: 25px;
   border-bottom: 1px solid #E0DEDE;
   font-weight: 600;
+  position: sticky;
+  position: -webkit-sticky;
+  align-self: flex-start;
+  z-index: 10;
+  top: 63px;
+  background: white;
+  margin-top: 0px;
 }
 
 .mountain {

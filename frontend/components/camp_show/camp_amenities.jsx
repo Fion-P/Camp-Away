@@ -6,6 +6,8 @@ import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
+// checks the boolean of each amenity in camp
+// changes text and icon styling based on if the amenity is available
 export const CampAmenities = ({camp}) => {
 
   let water;

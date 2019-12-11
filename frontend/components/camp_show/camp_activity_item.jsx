@@ -10,6 +10,8 @@ import { faSwimmer } from "@fortawesome/free-solid-svg-icons";
 import { faHorse } from "@fortawesome/free-solid-svg-icons";
 import { faMountain } from "@fortawesome/free-solid-svg-icons";
 
+// checks the activity passed in through props
+// assigns different icons based on the activitiy
 export const CampActivity = ({activity}) => {
   if (activity === "biking") {
     return (

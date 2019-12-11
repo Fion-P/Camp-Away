@@ -10,6 +10,8 @@ class BookingForm extends React.Component {
 
   constructor(props) {
     super(props);
+    // checks to see if there is a current logged in user
+    // if there is one the id is inputed into the state to be used to create booking
     let currentUserId;
     if (this.props.currentUser) {
       currentUserId = this.props.currentUser.id;
@@ -29,20 +31,24 @@ class BookingForm extends React.Component {
     this.handleCheckOut = this.handleCheckOut.bind(this);
   }
 
+  // sets the value in the state to value of input
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
   }
 
+  // changes the date input to date string
   handleCheckIn(day) {
     this.setState({ check_in: day.toLocaleDateString() });
   }
 
+  // changes the date input to date string
   handleCheckOut(day) {
     this.setState({ check_out: day.toLocaleDateString() });
   }
 
+  // sets the state to deal with the number of guests
   handleGuests(type) {
     event.preventDefault();
     if (type === 'minus' && this.state.num_guests > 1) {
@@ -53,6 +59,8 @@ class BookingForm extends React.Component {
     }
   }
 
+  // submits the form to create booking if logged in
+  // opens the login form if user is not logged in
   handleSubmit(e) {
     e.preventDefault();
     if (!this.state.check_in || !this.state.check_out) {
@@ -67,20 +75,17 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    // let {camp} = this.props;
-    // let defaultCheckOut
-    // if (this.state.check_in) {
-    //   defaultCheckOut = new Date(this.state.check_in);
-    //   defaultCheckOut = defaultCheckOut.setDate(defaultCheckOut.getDate() + camp.minimum_nights);
-    // }
     let first = this.state.check_in;
     let second;
+
+    // sets up date to diable the days before the check-in date plus minimum nights
     if (!first) {
       second
     } else {
       second = new Date(this.state.check_in);
       second.setDate(second.getDate() + this.props.camp.minimum_nights);
     }
+
     return (
       <div className='booking-form'>
         <h1>${this.props.camp.price}</h1>

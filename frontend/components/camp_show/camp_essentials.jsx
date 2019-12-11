@@ -5,7 +5,8 @@ import { faDog } from "@fortawesome/free-solid-svg-icons";
 import { faFireAlt } from "@fortawesome/free-solid-svg-icons";
 
 
-
+// checks the boolean of if essential is available
+// changes the display of the essential based on  if it's available
 export class CampEssentials extends React.Component {
 
   render () {

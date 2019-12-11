@@ -1,13 +1,14 @@
 import React from 'react';
-// import CampIndexItem from '../camps/camp_index_item';
 import { Link } from 'react-router-dom';
 
 class BookingItem extends React.Component {
 
+  // fetches the camp that is booked
   componentDidMount() {
     this.props.fetchCamp(this.props.booking.camp_id);
   }
   
+  // renders the camp information and booking information
   render() {
     let {booking, camps} = this.props;
     let camp = camps[booking.camp_id];

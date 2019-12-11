@@ -6,7 +6,6 @@ import {CampActivity} from  './camp_activity_item';
 import BookingFormContainer from '../bookings/booking_form_container';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewItem from '../reviews/review_item_container';
-import Carousel from '../carousel/carousel';
 import { Link } from 'react-router-dom';
 
 
@@ -19,6 +18,7 @@ class CampShow extends React.Component {
     };
   }
 
+  // fetches the camp based on the params 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchCamp(this.props.match.params.campId)
@@ -34,6 +34,7 @@ class CampShow extends React.Component {
     });
   }
 
+  // checks to make sure the correct camp is displayed if user changes the http request
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.campId !== this.props.match.params.campId) {
       this.props.fetchCamp(this.props.match.params.campId);
@@ -47,16 +48,24 @@ class CampShow extends React.Component {
         </div>
       )
     }
+    // checks to see if there's a camp
     let camp = this.props.camp;
     if (!camp) return null;
+
     let activities = this.props.camp.activities;
+
+    // checks to see if there's a host 
     let host = this.props.users[camp.host_id];
     if (!host) return null;
+
+    // checks for reviews
     let reviews = this.props.reviews;
     let reviewIds = this.props.camp.reviewIds;
     if (!reviewIds) return null;
     let reviewCount = reviewIds.length;
     let reviewTitle;
+
+    // displays the review counts if it's greater than 1/or 0 or less than
     if (reviewCount > 1 || reviewCount === 0) {
       reviewTitle = (
         <h1 className="review-count">{reviewCount} Written reviews</h1>
@@ -66,14 +75,15 @@ class CampShow extends React.Component {
         <h1 className="review-count">{reviewCount} Written review</h1>
       )
     }
-    if (!camp.photoUrls) return null;
-    // debugger;
 
+    // checks for camp photos
+    if (!camp.photoUrls) return null;
+
+    // references the different components to deal with dynamic displayss
     return (
       <div className="campShow">
         <div className="campImage">
           <img src={camp.photoUrls[0]}/>
-          {/* <Carousel photoUrls={camp.photoUrls} /> */}
         </div>
         <div className="showArea">
           <div className="campinfo">

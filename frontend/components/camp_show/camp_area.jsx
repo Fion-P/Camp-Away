@@ -7,13 +7,15 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faParking } from "@fortawesome/free-solid-svg-icons";
 
 
-
+// displays the type of lodging and max guests along with other static information
 class CampArea extends React.Component {
 
   render() {
     let {camp} = this.props;
     let lodging = camp.lodging_type;
     let lodge_sym;
+
+    // changes the display for lodging based on if it's tents or cabin
     if (lodging === "Tents") {
       lodge_sym = ( 
         <span>
