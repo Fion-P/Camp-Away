@@ -1,7 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
 import { withRouter } from "react-router-dom";
-import { create } from 'domain';
 
 class CampsMap extends React.Component {
 

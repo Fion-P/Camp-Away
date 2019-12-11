@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+// Displays the info for each camp 
+// only displays picture, name, location, and price per night
 export default ({ camp }) => {
-  // debugger
   return (
     <div className="eachCamp">
       <Link to={`/camps/${camp.id}`}>

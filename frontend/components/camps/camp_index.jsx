@@ -1,31 +1,12 @@
 import React from 'react';
 import CampIndexItem from './camp_index_item';
 
+// General page for camps index
+// shows the individual camp info through the CampIndexItem
 class CampIndex extends React.Component {
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state =  {
-  //     loaded: false
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   this.props.fetchCamps()
-  //     .then(() => {
-  //       this.setState( {loaded: true} );
-  //     });
-  // }
 
   render() {
     let camps = this.props.camps;
-    // if (!this.state.loaded) {
-    //   return (
-    //     <div>
-    //     </div>
-    //   )
-    // }
-    // debugger;
     return (
       <div className="indexPage">
         <div className="camps">
