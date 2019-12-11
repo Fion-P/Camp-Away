@@ -1,6 +1,7 @@
 import React from "react";
 import {Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 
+import NavBar from "./nav-bar/nav-bar";
 import GreetingContainer from "./greeting/greeting_container";
 import HomeContainer from './hompage/homepage_container';
 import CampIndexContainer from './camps/camp_index_container';
@@ -20,16 +21,7 @@ const App = () => {
     <div className="app">
       <div className="top">
         <Modal />
-        <nav className=".nav-bar">
-          <span className='header'>
-            {/* <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link> */}
-            <h1><Link to="/">Camp Away</Link>
-            </h1>
-          </span>
-          <span className="nav-right">
-            <GreetingContainer />
-          </span>
-        </nav>
+        <NavBar />
       </div>
       <div className="body">
         <Switch>

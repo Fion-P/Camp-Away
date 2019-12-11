@@ -21,16 +21,23 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false
+      loaded: false,
+      query: ""
     };
   }
 
   componentDidMount() {
+    this.setState({ query: this.props.location.search });
     this.props.fetchCamps()
       .then(() => {
         this.setState({ loaded: true });
-        // console.log(this.props);
       });
+  }
+
+  componentDidUpdate(oldProps) {
+    if (oldProps.location.search !== this.props.location.search) {
+      this.setState({ query: this.props.location.search });
+    }
   }
 
   render() {
@@ -41,9 +48,6 @@ class Search extends React.Component {
         </div>
       )
     }
-
-    //fetch query string to get location coordinates
-    let query = this.props.location.search
     
     return (
       <div className="mapCamps">
@@ -51,10 +55,10 @@ class Search extends React.Component {
           <CampIndex camps={camps} />
         </div>
         <div className="CMaps">
-          <CampsMap camps={camps} query={query}/>
-        </div>  
+          <CampsMap camps={camps} query={this.state.query} />
+        </div>
       </div>
-    )
+    );
   }
 }
 
