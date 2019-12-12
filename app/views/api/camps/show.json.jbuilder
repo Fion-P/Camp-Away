@@ -12,16 +12,11 @@ end
 
   json.authors do
     json.set! review.author.id do
-      json.extract! review.author, :id, :username, :first_name, :last_name
+      # json.extract! review.author, :id, :username, :first_name, :last_name
+      json.partial! "/api/users/user", user: review.author
     end
   end
 end
-
-# json.host do {
-  # json.set! @camp.host.id do 
-  #   json.extract! @camp.host, :id, :first_name, :last_name
-  # end
-# }
 
 json.host do 
   json.partial! "/api/users/user", user: @camp.host

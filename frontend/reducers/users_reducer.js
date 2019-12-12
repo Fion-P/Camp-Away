@@ -8,8 +8,8 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
-    case FETCH_USER:
-      return Object.assign({}, state, { [action.user.id]: action.user });
+    // case FETCH_USER:
+    //   return Object.assign({}, state, { [action.user.id]: action.user });
     case REMOVE_BOOKING:
       const {bookingId, user_id} = action;
       let thisState = Object.assign({}, state)
@@ -24,8 +24,15 @@ const usersReducer = (state = {}, action) => {
       newState[booking.user_id].bookingIds.push(booking.id);
       return newState;
     case RECEIVE_CAMP:
-      if (action.host) return Object.assign({}, state, { [action.host.id]: action.host });;
-      return state;
+      let updatedState = Object.assign({}, state);
+      if (action.authors) {
+        let authors = Object.values(action.authors) 
+        for (let i = 0; i < authors.length; i++) {
+          updatedState[authors[i].id] = authors[i];
+        }
+      }
+      if (action.host) updatedState[action.host.id] = action.host;
+      return updatedState;
     default:
       return state;
   }

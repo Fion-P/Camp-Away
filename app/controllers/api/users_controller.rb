@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show 
-    @user = User.includes(:bookings).find(params[:id])
+    @user = User.includes(:bookings).includes(:booked_camps).find(params[:id])
   end
 
    private
