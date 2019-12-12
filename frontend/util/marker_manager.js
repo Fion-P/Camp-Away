@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
 
 class MarkerManager {
+
   constructor(map, handleClick) {
     this.map = map;
     this.markers = {};
     this.handleClick = handleClick;
-
-    // this.toggleBounce = this.toggleBounce.bind(this);
   }
 
+  // creates the markers
   createMarkerFromCamp(camp) {
 
+    // html for the info window
     const markerInfoWindow = new google.maps.InfoWindow({
       content:
         `
@@ -32,6 +33,7 @@ class MarkerManager {
       maxWidth: 250,
     });
 
+    // create markers with the position
     const position = new google.maps.LatLng(camp.latitude, camp.longitude);
     const marker = new google.maps.Marker({
       position,
@@ -46,14 +48,15 @@ class MarkerManager {
 
     // marker.addListener('click', () => this.handleClick(camp));
     this.markers[marker.campId] = marker;
-    // console.log(this.markers);
 
+    // bounces and opens the info window on hover
     marker.addListener('mouseover', () => {
       marker.infoWindow.open(this.map, marker);
-      // this.toggleBounce(marker)
       marker.setAnimation(google.maps.Animation.BOUNCE)
     });
 
+    // info window sticks in place if clicked on, 
+    // exits out of other info windows
     marker.addListener('click', () => {
       marker.clicked = !marker.clicked;
       if (marker.clicked) {
@@ -64,6 +67,7 @@ class MarkerManager {
       }
     });
 
+    // if not clicked, exits out of info window and stops the bouncing
     marker.addListener('mouseout', () => {
       if (!marker.clicked) marker.infoWindow.close(this.map, marker);
       marker.setAnimation(null)
@@ -71,6 +75,7 @@ class MarkerManager {
 
   }
 
+  // marker bounce function
   toggleBounce(marker) {
     if (marker.getAnimation() !== null) {
       marker.setAnimation(null);
@@ -79,6 +84,7 @@ class MarkerManager {
     }
   }
 
+  // creates and deletes markers
   updateMarkers(camps) {
     const campsObj = {};
     camps.forEach(camp => campsObj[camp.id] = camp);
@@ -93,10 +99,17 @@ class MarkerManager {
     
   }
   
+  // function to close all info windows
   closeInfoWindows() {
     Object.values(this.markers).forEach(marker => {
       marker.infoWindow.close(this.map, marker);
     });
+  }
+
+  // removes the markers
+  removeMarker(marker) {
+    this.markers[marker.campId].setMap(null);
+    delete this.markers[marker.campId];
   }
 }
 
