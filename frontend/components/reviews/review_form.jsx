@@ -19,7 +19,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.currentUser);
+    // console.log(this.props.currentUser);
     if (this.props.currentUser) {
       const review = Object.assign({}, this.state);
       this.props.createReview(review);

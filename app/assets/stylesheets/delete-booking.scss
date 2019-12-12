@@ -39,6 +39,9 @@
 
 .delete-booking-close {
   font-size: 14px;
-  // font-weight: bold;
   font-weight: 55;
+}
+
+.delete-booking-close:hover {
+  cursor: pointer;
 }

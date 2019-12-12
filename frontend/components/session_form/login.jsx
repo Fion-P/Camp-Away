@@ -17,11 +17,18 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this.errors = [];
+
+    this.escFunction = this.escFunction.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.clearErrors();
+    document.addEventListener('keydown', this.escFunction);
+  }
+  
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction);
   }
 
   handleDemoUser() {
@@ -81,9 +88,16 @@ class SessionForm extends React.Component {
       // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
   }
 
+  escFunction(e) {
+    if (e.keyCode === 27) {
+      this.props.closeModal();
+    }
+  }
+
   renderErrors() {
     return (
       <div className="errors">
+        <div tabIndex="0" onKeyDown={this.escFunction}></div>
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>

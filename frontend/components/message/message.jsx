@@ -10,6 +10,15 @@ class Message extends React.Component {
       errors: ""
     };
     this.handleMessage = this.handleMessage.bind(this);
+    this.escFunction = this.escFunction.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.escFunction);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction);
   }
 
   // changes the state based on input
@@ -27,9 +36,16 @@ class Message extends React.Component {
     }
   }
 
+  escFunction(e) {
+    if (e.keyCode === 27) {
+      this.props.closeModal();
+    }
+  }
+
   render () {
     return (
       <div className="message">
+        <div tabIndex="0" onKeyDown={this.escFunction}></div>
         <div onClick={this.props.closeModal} className="close-x">x</div>
         <form className="message-form">
              <textarea

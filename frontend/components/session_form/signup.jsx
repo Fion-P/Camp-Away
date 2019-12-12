@@ -16,15 +16,17 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.errors = [];
+    this.escFunction = this.escFunction.bind(this);
   }
 
-  componentDidMount(prevProps) {
+  componentDidMount() {
     window.scrollTo(0, 0);
     this.props.clearErrors();
+    document.addEventListener('keydown', this.escFunction);
   }
   
-  componentDidUpdate(prevProps) {
-    
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction);
   }
 
   handleInput(type) {
@@ -56,10 +58,18 @@ class SessionForm extends React.Component {
     );
   }
 
+  escFunction(e) {
+    console.log("hit")
+    if (e.keyCode === 27) {
+      this.props.closeModal();
+    }
+  }
+
   render() {
 
     return (
       <div className="form">
+        <div tabIndex="0" onKeyDown={this.escFunction}></div>
         <div className="formInside">
           <div onClick={this.props.closeModal} className="close-x">X</div>
           <h3>Sign Up!</h3>
