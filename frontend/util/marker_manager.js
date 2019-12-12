@@ -11,14 +11,22 @@ class MarkerManager {
 
     const markerInfoWindow = new google.maps.InfoWindow({
       content:
-        `<div class="infowindow">
-          <img class="infowindow-image" src="${camp.photoUrls[0]}"/>
-          <div>
-            <h2 class="infowindow-title"> ${camp.name} </h2>
-            <p>${camp.location}</p>
-            <p>$${camp.price}/night</p>
-            </div>
-        </div>`,
+        `
+          <a href="/#/camps/${camp.id}">
+          <div class="infowindow">
+              <img class="infowindow-image" src="${camp.photoUrls[0]}"/>
+              <div class="infowindow-info">
+                <div>
+                  <h2 class="infowindow-camp-name"> ${camp.camp_name} </h2>
+                  <h3 class="infowindow-location">${camp.location}</h3>
+                </div>
+                <div class="iw-price-container">
+                  <h4 class="infowindow-price">$${camp.price}/night</h4>
+                </div>
+              </div>
+              </div>
+          </a>
+        `,
       maxWidth: 250,
     });
 
@@ -30,15 +38,25 @@ class MarkerManager {
       icon: "smallpin.png",
       title: camp.name,
       infoWindow: markerInfoWindow,
-      // clicked: false
+      clicked: false
     });
 
-    marker.addListener('click', () => this.handleClick(camp));
+    // marker.addListener('click', () => this.handleClick(camp));
     this.markers[marker.campId] = marker;
     // console.log(this.markers);
 
     marker.addListener('mouseover', () => {
       marker.infoWindow.open(this.map, marker);
+    });
+
+    marker.addListener('click', () => {
+      marker.clicked = !marker.clicked;
+      if (marker.clicked) {
+        this.closeInfoWindows();
+        marker.infoWindow.open(this.map, marker);
+      } else {
+        marker.infoWindow.close(this.map, marker);
+      }
     });
 
     marker.addListener('mouseout', () => {
@@ -61,6 +79,11 @@ class MarkerManager {
     
   }
   
+  closeInfoWindows() {
+    Object.values(this.markers).forEach(marker => {
+      marker.infoWindow.close(this.map, marker);
+    });
+  }
 }
 
 export default MarkerManager;
