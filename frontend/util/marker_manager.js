@@ -28,8 +28,10 @@ class MarkerManager {
 
     Object.keys(this.markers)
       .filter(campId => !campsObj[campId])
-      .forEach((campId) => this.removeMarker(this.markers[campId]))
+      .forEach((campId) => this.removeMarker(this.markers[campId]));
+      
   }
+  
 }
 
 export default MarkerManager;

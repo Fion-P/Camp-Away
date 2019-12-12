@@ -7,6 +7,8 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Greeting = ( { currentUser, logout, openModal } ) => {
   
+
+  // check if there is a current user to display different things on the greetings potion of nav bar
   const display = currentUser ? (
     <div className="header_logged">
       <ul>

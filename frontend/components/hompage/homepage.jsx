@@ -11,15 +11,12 @@ class HomePage extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.divName = "hidden";
-    // this.state = {
-    //   shown: false
-    // };
     this.state = {
       loaded: false
     };
   }
 
+  // fetches the camps for the featured 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchCamps()
@@ -28,6 +25,8 @@ class HomePage extends React.Component {
       });
   }
 
+  // renders the homepage
+  // uses differnt components for search bar, camps, and footer
   render() {
     let camps = this.props.camps;
     if (!this.state.loaded) {
@@ -40,7 +39,7 @@ class HomePage extends React.Component {
     for (let i = 5; i < 8; i ++) {
       featured.push(camps[i])
     }
-    // console.log(featured);
+
     return (
       <div className="home-page">
         <div className="page-top">

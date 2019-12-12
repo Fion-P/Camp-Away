@@ -7,14 +7,13 @@ import MessageContainer from '../message/message.container';
 import UpdateReviewContainer from '../reviews/update_review_container';
 
 function Modal({ modal, closeModal }) {
-  // let modal = this.props.modal;
-  // let closeModal = this.props.closeModal;
-  // debugger;
+
   if (!modal) {
     return null;
   }
   let component;
-  // debugger;
+
+  //  changes the component of the modal based on the case
   switch (modal) {
     case 'login':
       component = <LoginFormContainer />;

@@ -12,10 +12,12 @@ class Message extends React.Component {
     this.handleMessage = this.handleMessage.bind(this);
   }
 
+  // changes the state based on input
   handleMessage(e) {
     this.setState( {message: e.target.value} );
   }
 
+  // closes the modal if the user is logged in, if not displays error message
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.currentUser) {
