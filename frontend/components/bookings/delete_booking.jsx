@@ -4,10 +4,8 @@ class DeleteBooking extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.handleDelete = this.handleDelete.bind(this);
   }
-
 
   handleDelete(e) {
     e.preventDefault();
@@ -15,32 +13,33 @@ class DeleteBooking extends React.Component {
     const bookingId = this.props.bookingId;
     this.props.delete(bookingId).then(() => this.props.closeModal())
   }
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const review = Object.assign({}, this.state);
-  //   this.props.updateReview(review).then(this.props.closeModal);
-  // }
 
   render() {
-    // debugger;
-    let bookingId = this.props.bookingId;
-    console.log(this.props);
-    // debugger
     return (
       <div className="delete-booking-form">
-        <div className="delete-question">
-          <h1>Are you sure you want to cancel your booking?</h1>
-          <button onClick={this.handleDelete}>
-            Yes, cancel it
-          </button>
-          <button onClick = {() => this.props.closeModal()}>
-            No, I want to keep it
-          </button>
+        <h2 onClick={this.props.closeModal} className="delete-booking-close">
+          x
+        </h2>
+        <div className="delete-booking-form-inside">
+          <div className="delete-question">
+            {/* <h1>Are you sure you want to <br /> cancel your booking?</h1> */}
+            <h1> Are you sure you want to </h1>
+            <h1> cancel your booking? </h1>
+          </div>
+          <div className="delete-booking-buttons">
+            <div className="delete-booking-button">
+              <button onClick={this.handleDelete}>
+                Yes, cancel it
+              </button>
+            </div>
+            <button onClick = {() => this.props.closeModal()}>
+              No, I want to keep it
+            </button>
+          </div>
         </div>
       </div>
     )
   }
-
 }
 
 export default DeleteBooking;

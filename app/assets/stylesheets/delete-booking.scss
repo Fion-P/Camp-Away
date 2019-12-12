@@ -1,0 +1,44 @@
+.delete-booking-form {
+  background: white;
+  width: 280px;
+  animation-name: fadeInDown;
+  animation-duration: 1.2s;
+}
+
+.delete-booking-form-inside {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.delete-question {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0 20px 0;
+}
+
+.delete-question h1 {
+  // font-weight: bold;
+  font-size: 18px;
+  font-weight: 55;
+}
+
+.delete-booking-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-booking-button {
+  padding: 0 0 5px 0;
+}
+
+.delete-booking-close {
+  font-size: 14px;
+  // font-weight: bold;
+  font-weight: 55;
+}
