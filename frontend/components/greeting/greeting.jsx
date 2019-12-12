@@ -23,7 +23,7 @@ const Greeting = ( { currentUser, logout, openModal } ) => {
           <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
         </li>
         <li>
-          <h3 className="formBtn" onClick={logout}>logout</h3>
+          <h3 className="formBtn" onClick={logout}>Logout</h3>
         </li>
       </ul>
     </div>
