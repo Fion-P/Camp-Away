@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.enterFunction = this.enterFunction.bind(this)
   }
 
   componentDidMount() {
@@ -25,12 +26,27 @@ class SearchBar extends React.Component {
       if (!autocomplete.getPlace().formatted_address) {
         address = autocomplete.getPlace().name;
         that.setState({ address: address });
+        // that.handleSubmit();
       } else {
         address = autocomplete.getPlace().formatted_address;
         that.setState({ address: address });
+        // that.handleSubmit();
       }
     });
+    // document.addEventListener('keydown', this.enterFunction);
   }
+
+  componentWillUnmount() {
+    // document.removeEventListener("keydown", this.enterFunction);
+  }
+
+
+  // enterFunction(e) {
+  //   if (e.keyCode === 13 ) {
+  //     console.log("hit");
+  //     this.handleSubmit(e);
+  //   }
+  // }
 
   handleInput() {
     return (e) => {
@@ -39,7 +55,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     //initiate lat and lng 
     let lat;
@@ -63,6 +79,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search">
+        {/* <div tabIndex="0" onKeyDown={this.enterFunction}></div> */}
         <div className="search-area">
           <div className="search-bar">
             <FontAwesomeIcon icon={faSearch} className="icon4" />

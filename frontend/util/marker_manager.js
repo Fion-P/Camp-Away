@@ -5,6 +5,8 @@ class MarkerManager {
     this.map = map;
     this.markers = {};
     this.handleClick = handleClick;
+
+    // this.toggleBounce = this.toggleBounce.bind(this);
   }
 
   createMarkerFromCamp(camp) {
@@ -38,6 +40,7 @@ class MarkerManager {
       icon: "smallpin.png",
       title: camp.name,
       infoWindow: markerInfoWindow,
+      animation: google.maps.Animation.DROP,
       clicked: false
     });
 
@@ -47,6 +50,8 @@ class MarkerManager {
 
     marker.addListener('mouseover', () => {
       marker.infoWindow.open(this.map, marker);
+      // this.toggleBounce(marker)
+      marker.setAnimation(google.maps.Animation.BOUNCE)
     });
 
     marker.addListener('click', () => {
@@ -61,8 +66,17 @@ class MarkerManager {
 
     marker.addListener('mouseout', () => {
       if (!marker.clicked) marker.infoWindow.close(this.map, marker);
+      marker.setAnimation(null)
     });
 
+  }
+
+  toggleBounce(marker) {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
   }
 
   updateMarkers(camps) {
