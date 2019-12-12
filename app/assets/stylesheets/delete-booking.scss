@@ -3,6 +3,8 @@
   width: 280px;
   animation-name: fadeInDown;
   animation-duration: 1.2s;
+  opacity: .9;
+  // margin-top: -282px;
 }
 
 .delete-booking-form-inside {
@@ -38,9 +40,20 @@
 }
 
 .delete-booking-close {
-  font-size: 14px;
+  font-size: 16px;
+  position: absolute;
+  top: -3px;
+  left: 3px;
   font-weight: 55;
 }
+
+// .delete-booking-close {
+//   font-size: 16px;
+//   font-weight: 55;
+//   position: absolute;
+//   top: -284px;
+//   left: 3px;
+// }
 
 .delete-booking-close:hover {
   cursor: pointer;

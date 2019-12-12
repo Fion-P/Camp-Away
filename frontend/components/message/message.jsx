@@ -46,22 +46,26 @@ class Message extends React.Component {
     return (
       <div className="message">
         <div tabIndex="0" onKeyDown={this.escFunction}></div>
-        <div onClick={this.props.closeModal} className="close-x">x</div>
-        <form className="message-form">
-             <textarea
-              className="host-message"
-              onChange={this.handleMessage}
-              value={this.state.message}
-              cols="30"
-              rows="10"
-              placeholder="Message your host..."
-              required
-            > 
-            </textarea>
-            <br/>
-          <button onClick={this.handleSubmit}>Send!</button>
-        </form>
-        <h2 id="message-errors">{this.state.errors}</h2>
+        <div onClick={this.props.closeModal} className="close-x-message">x</div>
+        <div className="message-container">
+          <form className="message-form">
+              <textarea
+                className="host-message"
+                onChange={this.handleMessage}
+                value={this.state.message}
+                cols="30"
+                rows="10"
+                placeholder="Message your host..."
+                required
+              > 
+              </textarea>
+              <br/>
+              <div>
+                <button onClick={this.handleSubmit}>Send!</button>
+              </div>
+          </form>
+          <h2 id="message-errors">{this.state.errors}</h2>
+        </div>
       </div>
     )
   }

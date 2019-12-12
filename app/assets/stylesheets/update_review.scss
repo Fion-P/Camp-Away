@@ -32,3 +32,12 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.update-review-close {
+  font-size: 14px;
+  font-weight: 55;
+  position: absolute;
+  cursor: pointer;
+  top: -1px;
+  left: 6px;
+}
