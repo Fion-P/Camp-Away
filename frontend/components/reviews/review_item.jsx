@@ -10,10 +10,6 @@ class ReviewItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchUser(this.props.review.user_id);
-  // }
-
   handleDelete(id) {
     event.preventDefault();
     this.props.deleteReview(id);
@@ -36,10 +32,9 @@ class ReviewItem extends React.Component {
         <button onClick={() => this.handleDelete(review.id)}>Delete</button>
       </div>
     ) : (
-        <div></div>
-      )
+      <div></div>
+    )
     
-
     return (
       <div className="review-item">
         <div className="review-head">

@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 class BookingItem extends React.Component {
 
+  handleDelete(bookingId) {
+    event.preventDefault();
+    this.props.openModal("delete", bookingId);
+  }
+
   render() {
     let {booking, camps} = this.props;
     let camp = camps[booking.camp_id];
@@ -48,7 +53,7 @@ class BookingItem extends React.Component {
             </div>
           </div>
           <div className="cancel-booking">
-            <button onClick={() => this.props.deleteBooking(booking.id)}>Cancel</button>
+            <button onClick={() => this.handleDelete(booking.id)}>Cancel</button>
           </div>
         </div>
       </div>

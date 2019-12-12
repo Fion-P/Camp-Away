@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import MessageContainer from '../message/message.container';
 import UpdateReviewContainer from '../reviews/update_review_container';
+import DeleteBookingContainer from '../bookings/delete_booking_container';
 
 function Modal({ modal, closeModal }) {
 
@@ -26,6 +27,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'edit':
       component = <UpdateReviewContainer />;
+      break;
+    case 'delete':
+      component = <DeleteBookingContainer /> 
       break;
     default:
       return null;
