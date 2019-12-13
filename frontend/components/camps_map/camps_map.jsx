@@ -6,26 +6,20 @@ class CampsMap extends React.Component {
 
   // generate map
   componentDidMount() {
-    this.props.fetchCamps()
-      .then(() => {
-        this.createMap();
-      });
+    this.createMap();
   }
 
   // update map if query string is different
   componentDidUpdate(oldProps) {
     if (oldProps.location.search !== this.props.location.search) {
-      this.props.fetchCamps()
-        .then(() => {
-          this.createMap();
-        });
+      this.createMap();
     }
   }
 
 
   //generate map with markers
   createMap() {
-    const queryString = this.props.location.search;
+    const queryString = this.props.location.search
     let lat;
     let lng;
 
