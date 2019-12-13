@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCamps: () => dispatch(fetchCamps()),
+  fetchCamps: (filters) => dispatch(fetchCamps(filters)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
