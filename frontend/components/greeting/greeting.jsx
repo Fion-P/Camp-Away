@@ -25,7 +25,6 @@ class Greeting extends React.Component {
 
   render() {
     let { currentUser, logout, openModal } = this.props
-    console.log(this.props)
 
     const display = currentUser ? (
       <div className="header_logged">
@@ -34,10 +33,10 @@ class Greeting extends React.Component {
             <h3 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h3>
           </li>
           <li>
-            <h3><a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
+            <h3><a href="https://github.com/Fion-P/Full_Stack" target="_blank"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
           </li>
           <li>
-            <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
+            <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
           </li>
           <li>
             <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
@@ -51,10 +50,10 @@ class Greeting extends React.Component {
         <div className="header_unlogged">
           <ul>
             <li>
-              <a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
+              <a href="https://github.com/Fion-P/Full_Stack" target="_blank"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
+              <a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
             </li>
             <li>
               <h1 className="formBtn"><Link className="btn" to="/camps"> Camps </Link></h1>

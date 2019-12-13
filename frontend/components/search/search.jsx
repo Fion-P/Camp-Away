@@ -21,18 +21,15 @@ class Search extends React.Component {
       let bounds = { "northEast": {"lat": lat+1, "lng": lng+1}, 
         "southWest": { "lat": lat - 1, "lng": lng - 1}
       };
-      console.log(bounds)
       this.props.fetchCamps(bounds)
         .then(() => {
           this.setState({ loaded: true });
         });
-      console.log("here");
     } else {
       this.props.fetchCamps()
         .then(() => {
           this.setState({ loaded: true });
         });
-      console.log("not here");
     }
     
   }
@@ -40,6 +37,21 @@ class Search extends React.Component {
   componentDidUpdate(oldProps) {
     if (oldProps.location.search !== this.props.location.search) {
       this.setState({ query: this.props.location.search });
+      if (this.props.location.search) {
+        let queryString = this.props.location.search;
+        let lat = parseFloat(queryString.split("=")[1].split("&")[0]);
+        let lng = parseFloat(queryString.split("=")[2]);
+        let bounds = {
+          "northEast": { "lat": lat + 1, "lng": lng + 1 },
+          "southWest": { "lat": lat - 1, "lng": lng - 1 }
+        };
+        this.props.fetchCamps(bounds)
+          .then(() => {
+            this.setState({ loaded: true });
+          });
+      } else {
+        this.props.fetchCamps()
+      }
     }
   }
 
