@@ -1,64 +1,83 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+class Greeting extends React.Component {
 
-const Greeting = ( { currentUser, logout, openModal } ) => {
-  
+  constructor(props) {
+    super(props);
 
-  // check if there is a current user to display different things on the greetings potion of nav bar
-  const display = currentUser ? (
-    <div className="header_logged">
-      <ul>
-        <li>
-          <h3 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h3>
-        </li>
-        <li>
-          <h3><a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
-        </li>
-        <li>
-          <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
-        </li>
-        <li>
-          <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
-        </li>
-        <li>
-          <h3 className="formBtn" onClick={logout}>Logout</h3>
-        </li>
-      </ul>
-    </div>
-  ) : (
-      <div className="header_unlogged">
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    let path = this.props.location.pathname;
+
+    if (path === "/") {
+      this.props.logout();
+    } else {
+      this.props.logout()
+        .then(() => this.props.history.push(`/`));
+    }
+  }
+
+  render() {
+    let { currentUser, logout, openModal } = this.props
+    console.log(this.props)
+
+    const display = currentUser ? (
+      <div className="header_logged">
         <ul>
           <li>
-            <a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
+            <h3 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h3>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
+            <h3><a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
           </li>
           <li>
-            <h1 className="formBtn"><Link className="btn" to="/camps"> Camps </Link></h1>
+            <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
           </li>
           <li>
-            <h1 className="formBtn" onClick={() => openModal('signup')}>Signup</h1>
+            <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
           </li>
-          <br />
           <li>
-            <h1 className="formBtn" onClick={() => openModal('login')}>Login</h1>
+            <h3 className="formBtn" onClick={this.handleLogout}>Logout</h3>
           </li>
         </ul>
       </div>
-    );
+    ) : (
+        <div className="header_unlogged">
+          <ul>
+            <li>
+              <a href="https://github.com/Fion-P/Full_Stack"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/fion-pang-429172154/"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
+            </li>
+            <li>
+              <h1 className="formBtn"><Link className="btn" to="/camps"> Camps </Link></h1>
+            </li>
+            <li>
+              <h1 className="formBtn" onClick={() => openModal('signup')}>Signup</h1>
+            </li>
+            <br />
+            <li>
+              <h1 className="formBtn" onClick={() => openModal('login')}>Login</h1>
+            </li>
+          </ul>
+        </div>
+      );
 
-  return (
-    <header className="greeting">
-      <div className="greeting">
-        {display}
-      </div>
-    </header>
-  );
+    return (
+      <header className="greeting">
+        <div className="greeting">
+          {display}
+        </div>
+      </header>
+    );
+  }
 }
 
-export default Greeting;
+export default withRouter(Greeting);

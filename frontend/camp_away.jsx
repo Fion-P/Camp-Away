@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  // window.fetchCamps = fetchCamps;
-  // window.dispatch = store.dispatch;
-  // window.getState = store.getState;
+  window.fetchCamps = fetchCamps;
+  window.dispatch = store.dispatch;
+  window.getState = store.getState;
   // window.login = login;
   ReactDOM.render(<Root store={store} />, root);
 });

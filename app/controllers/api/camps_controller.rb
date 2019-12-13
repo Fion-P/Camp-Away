@@ -5,6 +5,7 @@ class Api::CampsController < ApplicationController
   end
 
   def index
+    # debugger
     camps = bounds ? Camp.in_bounds(bounds) : Camp.all
     @camps = camps.with_attached_photos
     # if params[:bounds]

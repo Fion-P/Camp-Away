@@ -68,10 +68,21 @@ class Camp < ApplicationRecord
   # has_one_attached :photo
 
   def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:lat])
-      .where("lat > ?", bounds[:southWest][:lat])
-      .where("lng > ?", bounds[:southWest][:lng])
-      .where("lng < ?", bounds[:northEast][:lng])
+    # debugger;
+    self.where("latitude < ?", bounds[:northEast][:lat])
+      .where("latitude > ?", bounds[:southWest][:lat])
+      .where("longitude > ?", bounds[:southWest][:lng])
+      .where("longitude < ?", bounds[:northEast][:lng])
   end
 
 end
+#  longitude      :float            not null
+#  latitude 
+
+# { "northEast": {"lat": 37.80971, "lng": -122.39208}, "southWest": {"lat": 37.74187, "lng": -122.47791}} 
+# bounds = {
+#           "northEast"=> {"lat"=>"37.80971", "lng"=>"-122.39208"},
+#           "southWest"=> {"lat"=>"37.74187", "lng"=>"-122.47791"}
+#         }
+
+# let bounds = { "northEast": {"lat": 37.80971, "lng": -122.39208}, "southWest": {"lat": 37.74187, "lng": -122.47791}}

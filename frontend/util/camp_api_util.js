@@ -1,10 +1,13 @@
-export const fetchCamps = (filters) => (
-  $.ajax({
+export const fetchCamps = (filters) => {
+  // debugger
+  return $.ajax({
     method: 'GET',
     url: '/api/camps',
-    data: filters
-  })
-);
+    data: {
+      bounds: filters
+    }
+  });
+};
 
 export const fetchCamp = id => (
   $.ajax({

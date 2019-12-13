@@ -18,11 +18,12 @@ export const receiveCamp = ({ camp, reviews, authors, host }) => {
   }
 };
 
-export const fetchCamps = (filters) => dispatch => (
-  APIUtil.fetchCamps(filters).then(camps => (
-    dispatch(receiveCamps(camps))
-  ))
-);
+export const fetchCamps = (filters) => dispatch => {
+  // debugger;
+  return APIUtil.fetchCamps(filters).then(camps => (
+      dispatch(receiveCamps(camps))
+  ));
+};
 
 export const fetchCamp = id => dispatch => (
   APIUtil.fetchCamp(id).then(camp => (
