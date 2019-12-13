@@ -59,7 +59,6 @@ class SessionForm extends React.Component {
   }
 
   escFunction(e) {
-    console.log("hit")
     if (e.keyCode === 27) {
       this.props.closeModal();
     }
