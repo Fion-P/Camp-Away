@@ -1,3 +1,4 @@
 /node_modules
 # bundle.js
 /app/assets/javascript/bundle.js.map
+/app/assets/javascript/bundle.js
