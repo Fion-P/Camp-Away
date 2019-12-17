@@ -129,6 +129,13 @@
 
 .close-x {
   cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+}
+
+.close-x:hover {
+  color: #8DE7CC;
 }
 
 .inputbox {

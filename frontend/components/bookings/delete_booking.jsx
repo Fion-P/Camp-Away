@@ -48,9 +48,9 @@ class DeleteBooking extends React.Component {
                 Yes, cancel it
               </button>
             </div>
-            <button onClick = {() => this.props.closeModal()}>
+            {/* <button onClick = {() => this.props.closeModal()}>
               No, I want to keep it
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

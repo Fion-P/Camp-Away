@@ -34,12 +34,18 @@
 .message-container {
   display: flex;
   justify-content: center;
-  padding: 9px 0 0 0;
+  // padding: 9px 0 0 0;
+  padding: 18px 5px 0px 5px;
 }
 
 .close-x-message {
   cursor: pointer;
   position: absolute;
   top: 1px;
-  left: 7px;
+  font-size: 23px;
+  right: 7px;
+}
+
+.close-x-message:hover {
+  color: #8DE7CC;
 }

@@ -43,8 +43,9 @@
   font-size: 16px;
   position: absolute;
   top: -3px;
-  left: 3px;
+  right: 5px;
   font-weight: 55;
+  font-size: 22px;
 }
 
 // .delete-booking-close {
@@ -57,4 +58,5 @@
 
 .delete-booking-close:hover {
   cursor: pointer;
+  color: #8DE7CC;
 }
