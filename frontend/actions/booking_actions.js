@@ -21,15 +21,22 @@ const removeBooking =({id, user_id, camp_id})=> {
   }
 };
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_BOOKING_ERRORS,
-  errors
-});
+export const receiveErrors = errors => {
+  return {
+    type: RECEIVE_BOOKING_ERRORS,
+    errors
+  };
+};
 
-export const createBooking = booking => dispatch => (
-  BookingAPIUtil.createBooking(booking)
-    .then(booking => dispatch(receiveBooking(booking)))
-);
+export const createBooking = booking => dispatch => {
+  // debugger;
+  return BookingAPIUtil.createBooking(booking)
+    .then(booking => 
+      (dispatch(receiveBooking(booking))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ));
+};
 
 export const fetchBooking = bookingId => dispatch => (
   BookingAPIUtil.fetchBooking(bookingId)

@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
     if @booking.save
       render :show
     else 
-      render json: @booking.errors.full_messages, status: 401
+      render json: ["Booking info is not complete"], status: 401
     end
   end
 

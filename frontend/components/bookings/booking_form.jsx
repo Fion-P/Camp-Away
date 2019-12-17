@@ -31,6 +31,11 @@ class BookingForm extends React.Component {
     this.handleCheckOut = this.handleCheckOut.bind(this);
   }
 
+  // clears the errors on mount
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   // sets the value in the state to value of input
   handleInput(type) {
     return (e) => {
@@ -63,15 +68,28 @@ class BookingForm extends React.Component {
   // opens the login form if user is not logged in
   handleSubmit(e) {
     e.preventDefault();
-    if (!this.state.check_in || !this.state.check_out) {
-      return;
-    } else if (this.props.currentUser) {
+
+    if (this.props.currentUser) {
       const booking = Object.assign({}, this.state);
-      this.props.createBooking(booking);
-      this.props.history.push(`/users/${this.props.currentUser.id}`);
+      this.props.createBooking(booking)
+        .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
     } else {
       this.props.openModal('login');
     }
+  }
+
+  renderErrors() {
+    return (
+      <div className="booking-errors">
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} className="booking-err-msg">
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   render() {
@@ -108,7 +126,6 @@ class BookingForm extends React.Component {
 
                   />
                 </div>
-
                 <div className='check-out'>
                   <h1 className='booking-input-label'>Check out</h1>
                   <DayPickerInput
@@ -119,11 +136,10 @@ class BookingForm extends React.Component {
 
                     dayPickerProps={{
                       disabledDays: { before: second },
+                      required: true,
                     }}
-
                   />
                 </div>
-
                 <div className='book-guests'>
                     <h1 className='booking-input-label'>Guests</h1>
                   <div className='guest-input'>
@@ -142,6 +158,9 @@ class BookingForm extends React.Component {
                 </div>
               </div>
           </div>
+              <div className="booking-errors-container">
+                {this.renderErrors()}
+              </div>
               <div className='booking-submit'>
                 <button id='booking-submit-btn' onClick={this.handleSubmit}>Book Now!</button>
               </div>

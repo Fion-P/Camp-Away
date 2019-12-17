@@ -97,7 +97,6 @@ class SessionForm extends React.Component {
   renderErrors() {
     return (
       <div className="errors">
-        <div tabIndex="0" onKeyDown={this.escFunction}></div>
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
@@ -108,10 +107,11 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-
+  
   render() {
     return (
       <div className="form">
+        <div tabIndex="0" onKeyDown={this.escFunction}></div>
         <div className="formInside">
           <div onClick={this.props.closeModal} className="close-x">X</div>
           <h3>Welcome back!</h3>

@@ -92,10 +92,28 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .booking-submit {
-  padding-top: 5%;
+  // padding-top: 5%;
+  padding-top: 8%;
+  padding-bottom: 2%;
 }
 
 #booking-submit-btn {
   width: 95%;
   height: 38px;
+}
+
+.booking-errors-container {
+  display: flex;
+  justify-content: center;
+  /* color: #7C7C7C; */
+  position: absolute;
+  // left: 48px;
+  left: 74px;
+  top: 137px;
+}
+
+.booking-err-msg {
+  // color: #7C7C7C;
+  color: rgb(204, 204, 204);
+  font-size: 12px;
 }
