@@ -35,6 +35,34 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 ---
 
+### Dynamic Nav-bar
+  ```javascript
+    let search 
+
+    if (this.props.location.pathname !== "/") {
+      search = <NavSearch profile={profile}/>
+    }
+
+    return (
+      <nav className=".nav-bar">
+        <span className="header">
+          <h1>
+            <Link to="/">Camp Away</Link>
+          </h1>
+          <span className="header-search">
+            {search}
+          </span>
+        </span>
+        <span className="nav-right">
+          <GreetingContainer />
+        </span>
+      </nav>
+    );
+  ```
+  * The nav bar changes depending on if a user a logged in or not.
+  * React-router-dom is use to fetch the pathname of where the user is so that the nav-search bar shows on all pages but the home-page.
+  * The nav-bar is located in a seperate component to keep the code clean and organized. 
+
 ### Camp Show and Reviews
 
 ![camo_show](https://i.pinimg.com/originals/87/62/3c/87623cdde6079a335f8741965a50b885.gif)
@@ -62,11 +90,43 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 ### Camps Index and Google Maps API
 
-![index](https://i.pinimg.com/originals/40/77/58/4077582567087666705cf60b261e58eb.gif)
+![index](https://i.pinimg.com/originals/02/ff/7f/02ff7f732ad506b37788c046343b8e03.gif)
 
 * All the camps are rendered when clicking "Camps" on the nav-bar.
 * The camps index page incorporates the Google Maps API to allow users to look around the map to see where each camp is with the markers.
-* The Google Maps API libraries, places and geocoder, are used to allow for a search bar that autofills and changes what camps are displayed based on the input. 
 * Each camp's infowindow pops up on hover and persists on click. 
 * Users can go directly to a camp's show page by cicking the listing on the index page or cicking on the infowindow on the map.
-* 
+* The Google Maps API libraries, places and geocoder, are used to allow for a search bar that autofills and changes what camps are displayed based on the input. 
+* Upon search, the coordinates are passed into a query string to pinpoint the map location.
+```javascript
+  //generate map with markers
+  createMap() {
+    const queryString = this.props.location.search
+    let lat;
+    let lng;
+
+    if (!queryString) {
+      // default to SF
+      lat = 37.8887;
+      lng = -122.342;
+    } else {
+      // set to user search
+      lat = parseFloat(queryString.split("=")[1].split("&")[0]);
+      lng = parseFloat(queryString.split("=")[2]);
+    }
+
+    // set the map locale and zoom
+    const mapOptions = {
+      center: { lat: lat, lng: lng },
+      zoom: 7
+    };
+
+    // create map and markers
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(
+      this.map,
+      this.handleMarkerClick.bind(this)
+    );
+    this.MarkerManager.updateMarkers(this.props.camps);
+  }
+```
