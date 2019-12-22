@@ -47,6 +47,7 @@
 .nametags:hover {
   text-decoration: underline;
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 .campTitle {
@@ -92,6 +93,7 @@
   // font-weight: 550;
   cursor: pointer;
   text-decoration: underline;
+  transition: 300ms ease;
 }
 
 .description {
@@ -146,6 +148,7 @@
 .message-link:hover {
   text-decoration: underline #8DE7CC;
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 .details-box {

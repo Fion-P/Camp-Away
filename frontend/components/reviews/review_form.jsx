@@ -42,7 +42,7 @@ class ReviewForm extends React.Component {
               placeholder="Talk about your experience..."
               cols="40" rows="5"
             ></textarea>
-          <button onClick={this.handleSubmit}>Submit review</button>
+          <button onClick={this.handleSubmit}>Review</button>
           </div>
         </form>
       </div>

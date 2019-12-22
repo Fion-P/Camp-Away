@@ -74,6 +74,7 @@
 
 .campIndexItem:hover {
   box-shadow: 0 2px 5px #3AC49A;
+  transition: 300ms ease;
 }
 
 // .eachCamp:hover {
@@ -97,6 +98,7 @@
   color: rgb(182, 165, 146);
   text-decoration: underline rgb(182, 165, 146);;
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 .campIndexItem h4{

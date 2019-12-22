@@ -108,6 +108,7 @@
 
 .demo:hover {
   color: #3A5998;
+  transition: 300ms ease;
 }
 
 .sessionLink a{
@@ -119,6 +120,7 @@
 .sessionLink a:hover {
   color: rgb(182, 165, 146);
   text-decoration: underline rgb(182, 165, 146);
+  transition: 300ms ease;
 }
 
 .sessionLink {
@@ -136,6 +138,7 @@
 
 .close-x:hover {
   color: #8DE7CC;
+  transition: 300ms ease;
 }
 
 .inputbox {

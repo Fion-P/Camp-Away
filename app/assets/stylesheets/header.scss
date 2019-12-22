@@ -10,6 +10,8 @@
 
 .header h1 a:hover {
   color: rgb(182, 165, 146);
+  transition: 300ms ease;
+  cursor: pointer;
 }
 
 .hidden {
@@ -43,6 +45,7 @@
 .header_unlogged ul li:hover{
   // border-bottom: 1px solid rgb(182, 165, 146);
   color: rgb(182, 165, 146);
+  transition: 300ms ease;
 }
 
 .header_unlogged{
@@ -60,6 +63,7 @@
 
 .btn:hover {
   color:  rgb(182, 165, 146);
+  transition: 300ms ease;
 }
 
 .header_logged ul{
@@ -90,12 +94,14 @@
 .formBtn:hover {
   color:  rgb(182, 165, 146);
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 
 .formBtn a:hover{
   color:  rgb(182, 165, 146);
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 .formBtn {
@@ -123,4 +129,5 @@
 .header-name a:hover{
   color:  rgb(182, 165, 146);
   cursor: pointer;
+  transition: 300ms ease;
 }

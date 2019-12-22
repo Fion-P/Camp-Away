@@ -42,6 +42,7 @@
 
 .DayPickerInput:hover {
   cursor: pointer;
+  transition: 300ms ease;
 }
 
 .book-guests {
@@ -100,6 +101,10 @@ input[type=number]::-webkit-outer-spin-button {
 #booking-submit-btn {
   width: 95%;
   height: 38px;
+}
+
+#booking-submit-btn:hover {
+  transition: 500ms ease;
 }
 
 .booking-errors-container {
