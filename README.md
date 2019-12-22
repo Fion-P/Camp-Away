@@ -3,7 +3,6 @@
 [Live Site](https://camp-away-hipcamp.herokuapp.com/#/)
 
 Camp Away is a full-stack clone of hipcamp.com, a booking website for camping.
-Things you may want to cover:
 
 ## Technologies
 
