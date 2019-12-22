@@ -33,6 +33,8 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 * Users who do not want to create an account are able to login as a demo user to navigate throughout the website and use it's features
 * Once logged in the nav bar changes and the user is redirected to the profile page.
 
+---
+
 ### Camp Show and Reviews
 
 ![camo_show](https://i.pinimg.com/originals/87/62/3c/87623cdde6079a335f8741965a50b885.gif)
@@ -44,6 +46,7 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 * Users are able to edit and delete their own reviews.
 * The number of reviews are shown at the top of where the reviews are.
 
+---
 
 ### Bookings
 
@@ -54,3 +57,16 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 * The check-out day defaults to the earliest check-out date depending on the camps' minimum night stay policy.
 * Upon booking, the user is redirected to the profile page where the user can look at and cancel their bookings.
 * When the cancel booking is clicked a modal, rendered with React components, shows up to confirm the cancellation.
+
+---
+
+### Camps Index and Google Maps API
+
+![index](https://i.pinimg.com/originals/40/77/58/4077582567087666705cf60b261e58eb.gif)
+
+* All the camps are rendered when clicking "Camps" on the nav-bar.
+* The camps index page incorporates the Google Maps API to allow users to look around the map to see where each camp is with the markers.
+* The Google Maps API libraries, places and geocoder, are used to allow for a search bar that autofills and changes what camps are displayed based on the input. 
+* Each camp's infowindow pops up on hover and persists on click. 
+* Users can go directly to a camp's show page by cicking the listing on the index page or cicking on the infowindow on the map.
+* 
