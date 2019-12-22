@@ -1,8 +1,8 @@
-# [Camp Away](https://camp-away-hipcamp.herokuapp.com/#/)
-
 ![splash](https://i.pinimg.com/originals/7e/98/0f/7e980f06790417f28351cccb7aa2e950.gif)
 
-Camp Away is a full-stack clone of hipcamp.com, a booking website for camping.
+# [Camp Away](https://camp-away-hipcamp.herokuapp.com/#/)
+
+Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the camps. React and Redux was utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
 
 ## Technologies
 
@@ -22,11 +22,11 @@ Camp Away is a full-stack clone of hipcamp.com, a booking website for camping.
 
 * Amazon AWS S3
 
-Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the camps. React and Redux was utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
-
 ## Features
 
 ### User Auth
+
+![alt tag](https://i.pinimg.com/originals/a9/b7/9c/a9b79c9c87e3cd4e652b56b959a98820.gif)
 
 * Users can create an account on Camp Away and login to view their user profile.
 
@@ -34,19 +34,21 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 * Users who do not want to create an account are able to login as a demo user to navigate throughout the website and use it's features
 
-![alt tag](screenshots/login1.png)
+* Once logged in the nav bar changes and the user is redirected to the profile page.
 
-### Camps
 
-* Users can browse through the campgrounds
+### Camp Show and Reviews
 
-* The google maps API is used to help reference where the camps are
+![camo_show](https://i.pinimg.com/originals/87/62/3c/87623cdde6079a335f8741965a50b885.gif)
 
-* The camps show page displays the details, essentials, amenities, and activities which render differently depending on availability 
+* Users can view each camps' information page
 
-* Users are also able to leave reviews on camp sites
+* The nav bar and booking box stays on the page as the user scrolls through the page
 
-![alt tag](screenshots/camps-index.png)
+* At the bottom users are able to leave reviews that will show up real-time
+
+* Users are able to edit and delete their own reviews.
+
 
 ### Bookings
 
