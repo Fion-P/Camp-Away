@@ -6,7 +6,6 @@
 
 ## Table of Contents
 
-  * [Live Site](#live-site)
   * [Background](#background)
   * [Technologies](#technologies)
   * [Features](#features)
