@@ -16,10 +16,14 @@
     * [Dynamic Nav-bar](#dynamic-nav-bar)
 
 ## Background
+###### [Go to Technologies](#technologies)
 
-Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the camps. React and Redux was utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
+Camp Away is a full stack web application inspired by the website Hipcamp. The website allows users to create an account and sign in. As an account holder, users can book camps, leave reviews, and view their user profile page. If a user does not want to sign up for an account, they can use the demo login or still explore the camps index and camps show. On the camps index page, the google maps API is used to show the location of camps, create markers with infowindows, and let users search for camps based on location.
+
+This site was built on a Ruby on Rails framework for the backend with active record to avoid N+1 queries. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the camps. React and Redux was utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
 
 ## Technologies
+###### [Go to Features](#features)
 
 * Ruby on Rails
 * React.js
