@@ -14,8 +14,9 @@ class NavBar extends React.Component {
 
   render() {
     let profile = this.state.users;
-    // console.log(this.props.location);
+    
     let search 
+
     if (this.props.location.pathname !== "/") {
       search = <NavSearch profile={profile}/>
     }
@@ -23,7 +24,6 @@ class NavBar extends React.Component {
     return (
       <nav className=".nav-bar">
         <span className="header">
-          {/* <h1><Link to="/">Camp<FontAwesomeIcon icon={faCampground} className="icon1" />way!</Link> */}
           <h1>
             <Link to="/">Camp Away</Link>
           </h1>

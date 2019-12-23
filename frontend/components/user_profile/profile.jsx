@@ -39,9 +39,27 @@ class Profile extends React.Component {
         <h2 className="no-books">Private</h2>
       </div>
     )
-    let sortedBookings = bookings.sort(function(a, b) {
+
+    let currentBookings = bookings.filter( book => {
+      return new Date(book.check_out) >= new Date(Date.now())
+    })
+
+    console.log("current", currentBookings);
+
+    let pastBookings = bookings.filter( book => {
+      return new Date(book.check_out) < new Date(Date.now())
+    })
+
+    console.log("past", pastBookings);
+
+    let sortedBookings = currentBookings.sort(function(a, b) {
       return (new Date(a.check_in) - new Date(b.check_in));
     });
+
+    let sortedPast = pastBookings.sort(function (a, b) {
+      return (new Date(a.check_in) - new Date(b.check_in));
+    });
+
     if (!user) return null;
     if ( currentUserId === user.id ) {
       if (user.bookingIds.length > 0) {
@@ -49,6 +67,12 @@ class Profile extends React.Component {
           <div className="bookings">
             {
               sortedBookings.map ( booking => {
+                return <BookingItemContainer booking={booking} key={booking.id} />
+              })
+            }
+            <h1>Past Bookings</h1>
+            {
+              sortedPast.map(booking => {
                 return <BookingItemContainer booking={booking} key={booking.id} />
               })
             }
@@ -62,6 +86,7 @@ class Profile extends React.Component {
         )
       }
     } 
+
     let date = new Date(user.created_at).toDateString()
     return (
       <div className="user-profile">
