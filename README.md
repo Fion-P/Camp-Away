@@ -119,6 +119,7 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 ---
 
 ### Dynamic Nav-bar
+###### [Back to top](#camp-away)
   ![nav](https://i.pinimg.com/originals/aa/e2/1f/aae21f064eb8ec21c227a88f0190b2e1.gif)
   * The nav bar changes depending on if a user a logged in or not.
   * React-router-dom is use to fetch the pathname of where the user is so that the nav-search bar shows on all pages but the home-page.
@@ -147,4 +148,3 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
     );
   ```
   
-  [Back to top](#camp-away)
