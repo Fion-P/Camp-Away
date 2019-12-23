@@ -1,8 +1,24 @@
 
-# [Camp Away](https://camp-away-hipcamp.herokuapp.com/#/)
+# Camp Away
+
+[Live Site](https://camp-away-hipcamp.herokuapp.com/#/)
+
+![splash](https://i.pinimg.com/originals/43/a5/a8/43a5a8a703e57ddbadb99bbcc9eafc79.gif)
+
+## Table of Contents
+
+  * [Background](#background)
+  * [Technologies](#technologies)
+  * [Features](#features)
+    * [User Auth](#user-auth)
+    * [Camps Index and Google Maps API](#camps-index-and-google-maps-api)
+    * [Camp Show and Reviews](#camp-show-and-reviews)
+    * [Bookings](#bookings)
+    * [Dynamic Nav-bar](#dynamic-nav-bar)
+
+## Background
 
 Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was used as the database to store the data along with Amazon AWS S3, which was used to store images for the camps. React and Redux was utilized to create a dynamic, single-page web app allowing users to smoothly navigate through the site. 
-![splash](https://i.pinimg.com/originals/43/a5/a8/43a5a8a703e57ddbadb99bbcc9eafc79.gif)
 
 ## Technologies
 
@@ -127,4 +143,4 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
     );
   ```
   
-  [create an anchor](#camp-show-and-reviews)
+  [Back to top](#camp-away)
