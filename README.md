@@ -33,7 +33,8 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 ## Features
 
-### User Auth
+### User Auth 
+###### [Next Feature](#camps-index-and-google-maps-api)
 
 ![alt tag](https://i.pinimg.com/originals/a9/b7/9c/a9b79c9c87e3cd4e652b56b959a98820.gif)
 
@@ -45,6 +46,7 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 ---
 
 ### Camps Index and Google Maps API
+###### [Next Feature](#camp-show-and-reviews)
 
 ![index](https://i.pinimg.com/originals/02/ff/7f/02ff7f732ad506b37788c046343b8e03.gif)
 
@@ -90,6 +92,7 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 ---
 
 ### Camp Show and Reviews
+###### [Next Feature](#bookings)
 
 ![camo_show](https://i.pinimg.com/originals/87/62/3c/87623cdde6079a335f8741965a50b885.gif)
 
@@ -102,7 +105,8 @@ Camp Away was built on a Ruby on Rails framework for the backend. PostgreSQL was
 
 ---
 
-### Bookings
+### Bookings 
+###### [Next Feature](#dynamic-nav-bar)
 
 ![bookings](https://i.pinimg.com/originals/32/ee/53/32ee53ac60fd668054891113ba1a7f56.gif)
 
