@@ -1,8 +1,6 @@
 
 # Camp Away
-###### [Table of Contents](#table-of-contents)
-
-## [Live Site](https://camp-away-hipcamp.herokuapp.com/#/)
+###### [Live Site](https://camp-away-hipcamp.herokuapp.com/#/)
 
 ![splash](https://i.pinimg.com/originals/43/a5/a8/43a5a8a703e57ddbadb99bbcc9eafc79.gif)
 
