@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // only displays picture, name, location, and price per night
 export default ({ camp }) => {
   return (
-    <div className="eachCamp">
+    <div className="eachCamp" id={camp.id}>
       <Link to={`/camps/${camp.id}`}>
         <li className="campIndexItem">
           <div className="index-photo">

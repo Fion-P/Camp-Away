@@ -40,25 +40,22 @@ class Profile extends React.Component {
       </div>
     )
 
+    // Organize bookings by date into past and current
     let currentBookings = bookings.filter( book => {
-      return new Date(book.check_out) >= new Date(Date.now())
+      return new Date(book.check_in) > new Date(Date.now())
     })
-
-    console.log("current", currentBookings);
-
-    let pastBookings = bookings.filter( book => {
-      return new Date(book.check_out) < new Date(Date.now())
-    })
-
-    console.log("past", pastBookings);
-
     let sortedBookings = currentBookings.sort(function(a, b) {
       return (new Date(a.check_in) - new Date(b.check_in));
     });
 
+    let pastBookings = bookings.filter( book => {
+      return new Date(book.check_in) <= new Date(Date.now())
+    })
     let sortedPast = pastBookings.sort(function (a, b) {
       return (new Date(a.check_in) - new Date(b.check_in));
     });
+
+
 
     if (!user) return null;
     if ( currentUserId === user.id ) {

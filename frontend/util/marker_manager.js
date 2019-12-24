@@ -46,13 +46,28 @@ class MarkerManager {
       clicked: false
     });
 
-    // marker.addListener('click', () => this.handleClick(camp));
     this.markers[marker.campId] = marker;
 
     // bounces and opens the info window on hover
     marker.addListener('mouseover', () => {
+      this.closeInfoWindows();
       marker.infoWindow.open(this.map, marker);
-      marker.setAnimation(google.maps.Animation.BOUNCE)
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    });
+
+    // grab camp info box elemeent
+    let campItem = document.getElementById(camp.id);
+    let campBox = campItem;
+    
+    // Get infowindow to open when hovering on corresponding camp info
+    campItem.addEventListener('mouseenter', (e) => {
+      if (parseInt(campBox.id) === marker.campId) {
+        marker.infoWindow.open(this.map, marker);
+      }
+    });
+    // Close infowindows when mouse leaves the info box
+    campItem.addEventListener('mouseleave', () => {
+      this.closeInfoWindows();
     });
 
     // info window sticks in place if clicked on, 

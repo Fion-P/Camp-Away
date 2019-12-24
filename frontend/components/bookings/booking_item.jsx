@@ -12,6 +12,17 @@ class BookingItem extends React.Component {
     let {booking, camps} = this.props;
     let camp = camps[booking.camp_id];
     if (!camp) return null;
+
+    let deleteButton;
+
+    if (new Date(booking.check_in) > new Date(Date.now())) {
+      deleteButton = (
+        <div className="cancel-booking">
+          <button onClick={() => this.handleDelete(booking.id)}>Cancel</button>
+        </div>
+      )
+    }
+
     return (
       <div className="user-bookings">
         <div className="each-booking">
@@ -52,9 +63,7 @@ class BookingItem extends React.Component {
               </div>
             </div>
           </div>
-          <div className="cancel-booking">
-            <button onClick={() => this.handleDelete(booking.id)}>Cancel</button>
-          </div>
+          {deleteButton}
         </div>
       </div>
 
