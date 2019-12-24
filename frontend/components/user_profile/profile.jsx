@@ -42,32 +42,37 @@ class Profile extends React.Component {
 
     // Organize bookings by date into past and current
     let currentBookings = bookings.filter( book => {
-      return new Date(book.check_in) > new Date(Date.now())
-    })
+      return new Date(book.check_out) >= new Date(Date.now())
+    });
     let sortedBookings = currentBookings.sort(function(a, b) {
       return (new Date(a.check_in) - new Date(b.check_in));
     });
 
     let pastBookings = bookings.filter( book => {
-      return new Date(book.check_in) <= new Date(Date.now())
+      return new Date(book.check_out) < new Date(Date.now())
     })
     let sortedPast = pastBookings.sort(function (a, b) {
       return (new Date(a.check_in) - new Date(b.check_in));
     });
 
+    let upcomingBooks = <h2 className="no-books">No current bookings!</h2>;
+    if (sortedBookings.length > 0 ) {
+      upcomingBooks =  (
+        <div className="bookings">
+          {
+            sortedBookings.map(booking => {
+              return <BookingItemContainer booking={booking} key={booking.id} />
+            })
+          }
+        </div>
+      )
+    }
 
-
-    if (!user) return null;
-    if ( currentUserId === user.id ) {
-      if (user.bookingIds.length > 0) {
-        books = (
+    
+    let passedBooks = <h2 className="no-books">No past bookings!</h2>;
+      if (sortedPast.length > 0) {
+        passedBooks = (
           <div className="bookings">
-            {
-              sortedBookings.map ( booking => {
-                return <BookingItemContainer booking={booking} key={booking.id} />
-              })
-            }
-            <h1>Past Bookings</h1>
             {
               sortedPast.map(booking => {
                 return <BookingItemContainer booking={booking} key={booking.id} />
@@ -75,13 +80,25 @@ class Profile extends React.Component {
             }
           </div>
         )
-      } else {
+      }
+
+    if (!user) return null;
+    if ( currentUserId === user.id ) {
         books = (
-          <div className="bookings">
-            <h2 className="no-books">No current bookings!</h2>
+          <div>
+            <h1 className="profile-books" >Current Bookings</h1>
+            {upcomingBooks}
+            <h1 className="profile-books past-books" >Past Bookings</h1>
+            {passedBooks}
           </div>
         )
-      }
+      // } else {
+      //   books = (
+      //     <div className="bookings">
+      //       <h2 className="no-books">No current bookings!</h2>
+      //     </div>
+      //   )
+      // }
     } 
 
     let date = new Date(user.created_at).toDateString()
@@ -104,7 +121,10 @@ class Profile extends React.Component {
           </div>
           <div className="user-data">
             <h1>
-              <span className="data-head"> Current bookings:</span> {user.bookingIds.length}
+              <span className="data-head"> Current bookings:</span> {currentBookings.length}
+            </h1>
+            <h1>
+              <span className="data-head"> Past bookings:</span> {pastBookings.length}
             </h1>
             <h1>
               <span className="data-head"> Username:</span> {user.username}

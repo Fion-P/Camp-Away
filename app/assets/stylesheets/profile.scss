@@ -24,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   // justify-content: space-around;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-left: 30px;
 }
 
@@ -131,8 +131,10 @@
 }
 
 .no-books {
-  font-size: 18px;
+  font-size: 16px;
   color: #9E9898;
+  padding: 13px 0 0 58px;
+  // font-weight: 600;
 }
 
 .private {
@@ -140,4 +142,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.profile-books {
+  padding-top: 15px;
+  font-size: 18px;
+  padding-left: 25px;
+  font-weight: 600;
+}
+
+.past-books {
+  border-top: 1px solid #E0DEDE;
 }

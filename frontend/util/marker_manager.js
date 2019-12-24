@@ -62,6 +62,7 @@ class MarkerManager {
     // Get infowindow to open when hovering on corresponding camp info
     campItem.addEventListener('mouseenter', (e) => {
       if (parseInt(campBox.id) === marker.campId) {
+        this.closeInfoWindows();
         marker.infoWindow.open(this.map, marker);
       }
     });

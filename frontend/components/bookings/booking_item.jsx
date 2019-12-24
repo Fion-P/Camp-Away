@@ -15,7 +15,7 @@ class BookingItem extends React.Component {
 
     let deleteButton;
 
-    if (new Date(booking.check_in) > new Date(Date.now())) {
+    if (new Date(booking.check_out) >= new Date(Date.now())) {
       deleteButton = (
         <div className="cancel-booking">
           <button onClick={() => this.handleDelete(booking.id)}>Cancel</button>

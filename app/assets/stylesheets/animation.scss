@@ -19,6 +19,26 @@
   }
 
   to {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); 
+    -moz-transform: translate3d(0, 0, 0); 
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDownBookings {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0); 
+    -moz-transform: translate3d(0, -100%, 0); 
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+
+  to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
