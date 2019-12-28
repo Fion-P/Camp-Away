@@ -11,8 +11,9 @@
   // justify-content: center;
   justify-content: space-around;
   z-index: 0;
+  width: 85%;
   // width: 1100px;
-  width: 1150px;
+  // width: 1150px;
 }
 
 
@@ -45,7 +46,8 @@
 }
 
 .search {
-  width: 900px;
+  // width: 900px;
+  width: 70%;
   margin: 30px auto;
   height: 80px;
   border: 1px solid #EBEBEB;
@@ -119,11 +121,13 @@
 .featured {
   display: flex;
   justify-content: center;
+  width: 85%;
 }
 
 .featured-content {
   // width: 900px;
-  width: 1000px;
+  // width: 1000px;
+  // width: 85%;
 }
 
 .featured-camp {
