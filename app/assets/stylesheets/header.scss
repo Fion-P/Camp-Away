@@ -9,7 +9,7 @@
 
 
 .header h1 a:hover {
-  color: rgb(182, 165, 146);
+  color: #3AC49A;
   transition: 300ms ease;
   cursor: pointer;
 }
@@ -23,7 +23,8 @@
 }
 
 .header h1 a{
-  font-weight: bold;
+  // font-weight: ;
+  font-weight: 600;
   font-size: 35px;
   font-family: "Calibre", Helvetica, Arial, Helvetica, sans-serif;
   color: black;
@@ -44,8 +45,8 @@
 
 .header_unlogged ul li:hover{
   // border-bottom: 1px solid rgb(182, 165, 146);
-  color: rgb(182, 165, 146);
-  transition: 300ms ease;
+  // color: rgb(182, 165, 146);
+  // transition: 300ms ease;
 }
 
 .header_unlogged{
@@ -61,10 +62,10 @@
   margin-right: 40px;
 }
 
-.btn:hover {
-  color:  rgb(182, 165, 146);
-  transition: 300ms ease;
-}
+// .btn:hover {
+//   color:  rgb(182, 165, 146);
+//   transition: 300ms ease;
+// }
 
 .header_logged ul{
   display: flex;
@@ -92,21 +93,37 @@
 }
 
 .formBtn:hover {
-  color:  rgb(182, 165, 146);
+  // color:  rgb(182, 165, 146);
+  // border-bottom: 1.5px solid #3FD9AC;
+  // cursor: pointer;
+  // transition: 300ms ease;
+}
+
+.login-greeting:hover {
+  border-bottom: 1.5px solid #3FD9AC;
   cursor: pointer;
-  transition: 300ms ease;
+  transition: 200ms ease;
+}
+
+.login-greeting {
+  padding: 0 2px 2px 2px;
 }
 
 
 .formBtn a:hover{
-  color:  rgb(182, 165, 146);
+  // color:  rgb(182, 165, 146);
+  border-bottom: 1.5px solid #3FD9AC;
   cursor: pointer;
-  transition: 300ms ease;
+  transition: 200ms ease;
+}
+
+.formBtn a {
+  padding: 0 2px 2px 2px;
 }
 
 .formBtn {
-  font-weight: bold;
-  font-size: 14px;
+  // font-weight: bold;
+  font-size: 16px;
 }
 
 .top-left h1{
@@ -126,8 +143,25 @@
   // animation-timing-function: ease-in;
 }
 
+.header-name {
+  font-size: 15px;
+}
+
 .header-name a:hover{
-  color:  rgb(182, 165, 146);
+  color:  #3AC49A;
   cursor: pointer;
   transition: 300ms ease;
+}
+
+.signup-greeting {
+  border: 3px solid #3AC49A;
+  padding: 11px 13px 11px 13px;
+  border-radius: 1px;
+}
+
+.signup-greeting:hover {
+  transition: 300ms ease;
+  color: white; 
+  background: #3AC49A;
+  cursor: pointer;
 }

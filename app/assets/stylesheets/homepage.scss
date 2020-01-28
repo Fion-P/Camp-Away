@@ -18,12 +18,14 @@
 
 
 .top-left h1{
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 40px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
+  margin-bottom: 20px;
   padding-top: 20px;
   font-family: "Calibre", Helvetica, Arial, Helvetica, sans-serif;
-  text-decoration: underline rgb(182, 165, 146);
+  // text-decoration: underline 1px #3AC49A;
+  border-bottom: 3px solid #3AC49A;
 }
 
 .top-left h2 {

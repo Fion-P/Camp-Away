@@ -30,19 +30,19 @@ class Greeting extends React.Component {
       <div className="header_logged">
         <ul>
           <li>
-            <h3 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h3>
+            <h1 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h1>
           </li>
           <li>
-            <h3><a href="https://github.com/Fion-P/Full_Stack" target="_blank"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a></h3>
+            <a href="https://github.com/Fion-P/Full_Stack" target="_blank"> <FontAwesomeIcon icon={faGithub} className="icon2" /></a>
           </li>
           <li>
-            <h3><a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a></h3>
+            <a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className="icon2" /></a>
           </li>
           <li>
-            <h3 className="formBtn"><Link to="/camps"> Camps </Link></h3>
+            <h1 className="formBtn"><Link to="/camps"> Camps </Link></h1>
           </li>
           <li>
-            <h3 className="formBtn" onClick={this.handleLogout}>Logout</h3>
+            <h1 className="formBtn " onClick={this.handleLogout}><span className="login-greeting">Logout</span></h1>
           </li>
         </ul>
       </div>
@@ -58,12 +58,12 @@ class Greeting extends React.Component {
             <li>
               <h1 className="formBtn"><Link className="btn" to="/camps"> Camps </Link></h1>
             </li>
-            <li>
-              <h1 className="formBtn" onClick={() => openModal('signup')}>Signup</h1>
+            <li >
+              <h1 className="formBtn" onClick={() => openModal('login')}><span className="login-greeting">Login</span></h1>
             </li>
             <br />
             <li>
-              <h1 className="formBtn" onClick={() => openModal('login')}>Login</h1>
+              <h1 className="formBtn signup-greeting" onClick={() => openModal('signup')}>Signup</h1>
             </li>
           </ul>
         </div>
