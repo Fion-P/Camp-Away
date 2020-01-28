@@ -66,6 +66,7 @@ class MarkerManager {
         marker.infoWindow.open(this.map, marker);
       }
     });
+
     // Close infowindows when mouse leaves the info box
     campItem.addEventListener('mouseleave', () => {
       this.closeInfoWindows();
@@ -86,7 +87,7 @@ class MarkerManager {
     // if not clicked, exits out of info window and stops the bouncing
     marker.addListener('mouseout', () => {
       if (!marker.clicked) marker.infoWindow.close(this.map, marker);
-      marker.setAnimation(null)
+      marker.setAnimation(null);
     });
 
   }
@@ -107,7 +108,7 @@ class MarkerManager {
 
     camps
       .filter(camp => !this.markers[camp.id])
-      .forEach(newcamp => this.createMarkerFromCamp(newcamp, this.handleClick))
+      .forEach(newcamp => this.createMarkerFromCamp(newcamp, this.handleClick));
 
     Object.keys(this.markers)
       .filter(campId => !campsObj[campId])
