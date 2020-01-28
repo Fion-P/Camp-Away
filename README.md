@@ -118,6 +118,22 @@ This site was built on a Ruby on Rails framework for the backend with active rec
 * The check-out day defaults to the earliest check-out date depending on the camps' minimum night stay policy.
 * Upon booking, the user is redirected to the profile page where the user can look at and cancel their bookings.
 * When the cancel booking is clicked a modal, rendered with React components, shows up to confirm the cancellation.
+* Bookings are organized by past bookings and current bookings based on the Check Out date and then they are sorted by the Check in date. 
+```javascript
+    let currentBookings = bookings.filter( book => {
+      return new Date(book.check_out) >= new Date(Date.now())
+    });
+    let sortedBookings = currentBookings.sort(function(a, b) {
+      return (new Date(a.check_in) - new Date(b.check_in));
+    });
+
+    let pastBookings = bookings.filter( book => {
+      return new Date(book.check_out) < new Date(Date.now())
+    })
+    let sortedPast = pastBookings.sort(function (a, b) {
+      return (new Date(a.check_in) - new Date(b.check_in));
+    });
+```
 
 ---
 
