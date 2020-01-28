@@ -148,3 +148,16 @@
 .demoDiv {
   padding-bottom: 5px;
 }
+
+.session-redirect {
+  text-decoration: underline #757575;
+  color: #757575;
+  font-size: 10px;
+}
+
+.session-redirect:hover {
+  cursor: pointer;
+  color: rgb(182, 165, 146);
+  text-decoration: underline rgb(182, 165, 146);
+  transition: 300ms ease;
+}

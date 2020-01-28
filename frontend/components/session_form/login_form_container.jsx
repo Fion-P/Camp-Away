@@ -23,7 +23,8 @@ const mapDispatchToProps = (dispatch) => ({
   processForm: (user) => dispatch(login(user)),
   otherForm: () => dispatch(openModal('signup')),
   closeModal: () => dispatch(closeModal()),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(

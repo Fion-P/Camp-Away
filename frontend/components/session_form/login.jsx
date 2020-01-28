@@ -143,7 +143,7 @@ class SessionForm extends React.Component {
               />
             </div>
             <button onClick={this.handleSubmit}>Login!</button>
-            <h5 className="sessionLink">Don't have an account? <Link to="/" onClick={this.props.otherForm}>Sign up</Link> here!</h5>
+            <h5 className="sessionLink">Don't have an account? <span className="session-redirect" onClick={() => this.props.openModal('signup')}>Sign up</span> here!</h5>
           </form>
         </div>
       </div>

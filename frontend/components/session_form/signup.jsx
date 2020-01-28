@@ -64,6 +64,7 @@ class SessionForm extends React.Component {
     }
   }
 
+
   render() {
 
     return (
@@ -126,7 +127,7 @@ class SessionForm extends React.Component {
               />
             </div>
             <button onClick={this.handleSubmit}>Sign Up!</button>
-            <h5 className="sessionLink">Already have an account? <Link to="/" onClick={this.props.otherForm}>Login</Link> here!</h5>
+            <h5 className="sessionLink">Already have an account? <span className="session-redirect" onClick={() => this.props.openModal('login')}> Login</span> here!</h5>
           </form>
         </div>
       </div>
