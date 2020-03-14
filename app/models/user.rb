@@ -36,7 +36,7 @@ class User < ApplicationRecord
     through: :bookings, 
     source: :camp
 
-  after_initialize :ensure_session_token
+  f
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

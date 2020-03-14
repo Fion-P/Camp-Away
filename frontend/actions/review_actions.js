@@ -13,7 +13,7 @@ export const removeReview = ({id, camp_id}) => ({
   type: REMOVE_REVIEW,
   id,
   camp_id
-})
+});
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(review => (
@@ -24,7 +24,7 @@ export const createReview = review => dispatch => (
 export const deleteReview = id => dispatch => (
   APIUtil.deleteReview(id)
     .then((review) => dispatch(removeReview(review)))
-)
+);
 
 export const updateReview = review => dispatch => (
   APIUtil.updateReview(review)

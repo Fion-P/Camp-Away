@@ -31,7 +31,7 @@ const receiveUser = ({user, bookings, camps}) => {
     user,
     bookings,
     camps
-  }
+  };
 };
 
 export const fetchUser = id => dispatch => (
