@@ -33,8 +33,7 @@ class Api::ReviewsController < ApplicationController
     @review = current_user.reviews.find(params[:id])
     
     @review.destroy
-    # debugger
-
+    
     render json: @review
   end
 
